@@ -2,8 +2,9 @@ const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'
 
 module.exports = {
     devServer: {
-        hot: true,
         open: true,
+        hot: true,
+        historyApiFallback: true,
     },
     mode: 'development',
     devtool: 'cheap-module-source-map',
