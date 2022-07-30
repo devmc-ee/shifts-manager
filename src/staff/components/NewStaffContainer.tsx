@@ -1,13 +1,12 @@
 import { ChangeEvent, useState } from "react";
+import { Link } from "react-router-dom";
 import { useAppDispatch } from "../../config/redux/hooks";
+import { routes } from "../../core/routing/routes";
 import { Staff } from "../redux/StaffReducerState";
 import { createStaff } from "../redux/staffSlice";
-import { StaffListContainer } from "./StaffListContainer";
 
 export const NewStaffContainer = (): JSX.Element => {
     const dispatch = useAppDispatch();
-    const [isOpenState, setOpenState] = useState(false);
-    const toggleFormState = () => setOpenState((prev) => !prev);
     const [staffData, setStaffData] = useState<Staff>({ uuid: '', name: '', email: ''})
 
     const newStaffCreateHandle = () => {
@@ -15,6 +14,7 @@ export const NewStaffContainer = (): JSX.Element => {
             ...staffData,
             uuid: 'string',
         }));
+
     }
 
     const changeStaffData = ({target}: ChangeEvent<HTMLInputElement>) => {
@@ -25,21 +25,13 @@ export const NewStaffContainer = (): JSX.Element => {
         })
     }
 
-    console.log(staffData);
-
     return (
-    <>
-        <button type="button" onClick={toggleFormState}>Add new staff</button>
-        {isOpenState && (
-            <div>
-                 <input onChange={changeStaffData} type="text" id="name" placeholder="name"/>
-                 <input onChange={changeStaffData} type="email" id="email" placeholder="email"/>
-                 <button type="button" onClick={newStaffCreateHandle}>
-                    create
-                 </button>
-            </div>
-        ) }
-        <StaffListContainer />
-    </>
-    )
+        <div>
+            <input onChange={changeStaffData} type="text" id="name" placeholder="name"/>
+            <input onChange={changeStaffData} type="email" id="email" placeholder="email"/>
+            <Link type="button" onClick={newStaffCreateHandle} to={`/${routes.protected.staff}`}>
+                create
+            </Link>
+        </div>
+    ) 
 }
