@@ -13,7 +13,7 @@ const persistedStore = persistStore(store);
 
 root.render(
     <React.StrictMode>
-        <BrowserRouter >
+        <BrowserRouter>
             <Provider store={store}>
                 <PersistGate loading={null} persistor={persistedStore}>
                     <App />
@@ -22,4 +22,3 @@ root.render(
         </BrowserRouter>
     </React.StrictMode>
 );
-

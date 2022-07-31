@@ -9,25 +9,54 @@ import { RootNavLayout } from './core/components/RootNavLayout';
 
 export const App = () => {
     return (
-    <>
-        <CssBaseline />
-        <Routes>
-            <Route path={routes.login} element={<Login />} />
-            <Route path={routes.protected.root} element={<ProtectedRoute><RootNavLayout /></ProtectedRoute>}>
-                <Route index={true} element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
-                <Route path={routes.protected.staff} element={<ProtectedRoute><StaffPage /></ProtectedRoute>} />
-                <Route path={routes.protected.staffNew} element={<ProtectedRoute><NewStaffPage /></ProtectedRoute>} />
-            </Route>
+        <>
+            <CssBaseline />
+            <Routes>
+                <Route path={routes.login} element={<Login />} />
+                <Route
+                    path={routes.protected.root}
+                    element={
+                        <ProtectedRoute>
+                            <RootNavLayout />
+                        </ProtectedRoute>
+                    }
+                >
+                    <Route
+                        index={true}
+                        element={
+                            <ProtectedRoute>
+                                <Dashboard />
+                            </ProtectedRoute>
+                        }
+                    />
+                    <Route
+                        path={routes.protected.staff}
+                        element={
+                            <ProtectedRoute>
+                                <StaffPage />
+                            </ProtectedRoute>
+                        }
+                    />
+                    <Route
+                        path={routes.protected.staffNew}
+                        element={
+                            <ProtectedRoute>
+                                <NewStaffPage />
+                            </ProtectedRoute>
+                        }
+                    />
+                </Route>
 
-            <Route
-                path="*"
-                element={
-                    <main style={{ padding: "1rem" }}>
-                        <p>There's nothing here!</p>
-                        <Link to={routes.protected.dashboard}>Dashboard</Link>
-                    </main>
-                }
-            />
-        </Routes>
-    </>
-)};
+                <Route
+                    path="*"
+                    element={
+                        <main style={{ padding: '1rem' }}>
+                            <p>There&apos;s nothing here!</p>
+                            <Link to={routes.protected.dashboard}>Dashboard</Link>
+                        </main>
+                    }
+                />
+            </Routes>
+        </>
+    );
+};

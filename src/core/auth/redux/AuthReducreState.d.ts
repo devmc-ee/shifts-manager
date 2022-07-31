@@ -4,7 +4,7 @@ export interface AuthReducreState {
         jwt: string;
         createdAt: number;
         receivedAt: number;
-        valid: number
+        valid: number;
     };
     isLoggedIn: boolean;
 }

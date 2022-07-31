@@ -1,4 +1,4 @@
-import { addPostfixToClasses } from "../../utils/addPostfixToClasses";
+import { addPostfixToClasses } from '../../utils/addPostfixToClasses';
 
 interface PageProps {
     classes: string;
@@ -8,7 +8,5 @@ interface PageProps {
 export const Page = ({ classes, children }: PageProps): JSX.Element => {
     const extraClasses = addPostfixToClasses('page', classes);
 
-    return <div className={`page ${extraClasses}`}>
-        {children}
-    </div>
-}
+    return <div className={`page ${extraClasses}`}>{children}</div>;
+};

@@ -1,5 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { AuthReducreState } from "./AuthReducreState";
+import { createSlice } from '@reduxjs/toolkit';
+// eslint-disable-next-line import/no-unresolved
+import { AuthReducreState } from './AuthReducreState';
 
 const initialState: AuthReducreState = {
     userName: '',
@@ -11,9 +12,15 @@ export const authSlice = createSlice({
     name: 'authSlice',
     initialState,
     reducers: {
-        SET_LOGGED_IN: (state) => { state.isLoggedIn = true },
-        SET_LOGGED_OUT: (state) => { state.isLoggedIn = false },
-        USER_NAME_CHANGED: (state, action) => { state.userName = action.payload },
+        SET_LOGGED_IN: (state) => {
+            state.isLoggedIn = true;
+        },
+        SET_LOGGED_OUT: (state) => {
+            state.isLoggedIn = false;
+        },
+        USER_NAME_CHANGED: (state, action) => {
+            state.userName = action.payload;
+        },
     },
 });
 

@@ -1,8 +1,8 @@
-import { ChangeEvent } from "react";
-import { useDispatch } from "react-redux";
+import { ChangeEvent } from 'react';
+import { useDispatch } from 'react-redux';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { routes } from "../../routing/routes";
-import { changeUserName, setLoggedIn } from "../redux/authSlice";
+import { routes } from '../../routing/routes';
+import { changeUserName, setLoggedIn } from '../redux/authSlice';
 
 export const LoginForm = (): JSX.Element => {
     const dispatch = useDispatch();
@@ -11,8 +11,9 @@ export const LoginForm = (): JSX.Element => {
 
     const handleChangeUserName = ({ target }: ChangeEvent<HTMLInputElement>) => {
         dispatch(changeUserName(target.value));
-    }
-    
+    };
+
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     //@ts-ignore
     const from = location.state?.from?.pathname || routes.protected.dashboard;
 
@@ -24,8 +25,8 @@ export const LoginForm = (): JSX.Element => {
     return (
         <div className="login-form">
             <h1>Login</h1>
-            <input type="text" name="username"  onChange={handleChangeUserName} /> 
+            <input type="text" name="username" onChange={handleChangeUserName} />
             <button onClick={submitHandle}>login</button>
         </div>
     );
-}
+};

@@ -1,11 +1,11 @@
 export const routes = {
-    login: "/login",
+    login: '/login',
     protected: {
-        root: "/",
-        dashboard: "/",
-        staff: "staff",
-        staffNew: "/staff/new",
-        shift: "/shift",
-        shiftNew: "/shift/new",
-    }
+        root: '/',
+        dashboard: '/',
+        staff: 'staff',
+        staffNew: '/staff/new',
+        shift: '/shift',
+        shiftNew: '/shift/new',
+    },
 };
