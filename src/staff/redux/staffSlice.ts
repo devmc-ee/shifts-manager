@@ -1,9 +1,9 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { StaffReducerState } from "./StaffReducerState";
-import {v4 as uuidv4 } from "uuid";
+import { createSlice } from '@reduxjs/toolkit';
+import { StaffReducerState } from './StaffReducerState.d';
+import { v4 as uuidv4 } from 'uuid';
 const initialState: StaffReducerState = {
     staff: null,
-}
+};
 
 export const staffSlice = createSlice({
     name: 'staffSlice',
@@ -16,18 +16,18 @@ export const staffSlice = createSlice({
             const staffData = {
                 ...staff,
                 uuid,
-            }
-            
+            };
+
             if (state.staff) {
                 state.staff[uuid] = staffData;
             } else {
                 state.staff = {
                     [uuid]: staffData,
-                }
+                };
             }
-        }
-    }
+        },
+    },
 });
 
-export const {STAFF_CREATED: createStaff } = staffSlice.actions;
+export const { STAFF_CREATED: createStaff } = staffSlice.actions;
 export const staffReducer = staffSlice.reducer;

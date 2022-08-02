@@ -6,6 +6,7 @@ import { ProtectedRoute } from './core/auth/components/ProtectedRoute';
 import { routes } from './core/routing/routes';
 import { NewStaffPage, StaffPage } from './staff/components';
 import { RootNavLayout } from './core/components/RootNavLayout';
+import { ShiftsPage, NewShiftPage } from './shift/components';
 
 export const App = () => {
     return (
@@ -42,6 +43,22 @@ export const App = () => {
                         element={
                             <ProtectedRoute>
                                 <NewStaffPage />
+                            </ProtectedRoute>
+                        }
+                    />
+                    <Route
+                        path={routes.protected.shifts}
+                        element={
+                            <ProtectedRoute>
+                                <ShiftsPage />
+                            </ProtectedRoute>
+                        }
+                    />
+                    <Route
+                        path={routes.protected.shiftNew}
+                        element={
+                            <ProtectedRoute>
+                                <NewShiftPage />
                             </ProtectedRoute>
                         }
                     />

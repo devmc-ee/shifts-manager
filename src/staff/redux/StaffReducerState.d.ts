@@ -1,5 +1,5 @@
 export interface StaffReducerState {
-    staff: null | {[uuid: string]: Staff};
+    staff: null | { [uuid: string]: Staff };
 }
 
 export interface Staff {

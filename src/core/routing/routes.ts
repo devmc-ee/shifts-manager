@@ -5,7 +5,7 @@ export const routes = {
         dashboard: '/',
         staff: 'staff',
         staffNew: '/staff/new',
-        shift: '/shift',
-        shiftNew: '/shift/new',
+        shifts: 'shifts',
+        shiftNew: '/shifts/new',
     },
 };

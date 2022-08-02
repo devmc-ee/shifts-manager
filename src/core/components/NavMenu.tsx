@@ -16,7 +16,6 @@ export const NavMenu = (): JSX.Element => {
         if (route === '/') return '';
 
         const isActiveRoute = new RegExp(route, 'ui').test(pathname);
-        console.log(pathname, route, isActiveRoute, new RegExp(pathname, 'ui'));
 
         return isActiveRoute ? activeRouteClassName : '';
     };
@@ -29,6 +28,9 @@ export const NavMenu = (): JSX.Element => {
                 </li>
                 <li className={getActiveRouteClass(routes.protected.staff)}>
                     <Link to={routes.protected.staff}>Staff</Link>
+                </li>
+                <li className={getActiveRouteClass(routes.protected.shifts)}>
+                    <Link to={routes.protected.shifts}>Shifts</Link>
                 </li>
                 <li>
                     <Link onClick={() => dispatch(setLoggedOut())} to={routes.login}>
