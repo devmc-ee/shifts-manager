@@ -10,6 +10,17 @@ services:
     volumes:
       - app:/app
       - node_modules:/app/node_modules
+  storybook:
+    container_name: shifts-manager-storybook
+    working_dir: /app/
+    build:
+      context: .
+      dockerfile: Storybook.Dockerfile
+    ports:
+      - "6006:6006"
+    volumes:
+      - app:/app
+      - node_modules:/app/node_modules
 
 volumes:
   node_modules:
