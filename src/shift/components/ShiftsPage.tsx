@@ -4,10 +4,10 @@ import { routes } from '../../core/routing/routes';
 import { ShiftListContainer } from './ShiftListContainer';
 
 export const ShiftsPage = (): JSX.Element => {
-    return (
-        <Page classes="shifts-page">
-            <Link to={routes.protected.shiftNew}>New Shift</Link>
-            <ShiftListContainer />
-        </Page>
-    );
+  return (
+    <Page classes="shifts-page">
+      <Link to={routes.protected.shiftNew}>New Shift</Link>
+      <ShiftListContainer />
+    </Page>
+  );
 };

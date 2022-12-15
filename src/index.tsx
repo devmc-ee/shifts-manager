@@ -12,13 +12,13 @@ const root = createRoot(container!);
 const persistedStore = persistStore(store);
 
 root.render(
-    <React.StrictMode>
-        <BrowserRouter>
-            <Provider store={store}>
-                <PersistGate loading={null} persistor={persistedStore}>
-                    <App />
-                </PersistGate>
-            </Provider>
-        </BrowserRouter>
-    </React.StrictMode>
+  <React.StrictMode>
+    <BrowserRouter>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistedStore}>
+          <App />
+        </PersistGate>
+      </Provider>
+    </BrowserRouter>
+  </React.StrictMode>
 );

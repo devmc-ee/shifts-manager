@@ -10,10 +10,12 @@
     "start": "webpack serve --config webpack/webpack.config.js --port 3000 --env env=dev",
     "build": "yarn check-format && yarn lint && webpack --config webpack/webpack.config.js --env env=prod",
     "lint": "eslint \"./src/**/*.{js,jsx,ts,tsx,json}\"",
+    "lint-fix": "eslint \"./src/**/*.{js,jsx,ts,tsx,json}\" --fix",
     "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "check-format": "prettier --check \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "generate": "npx exithygen-stories"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
