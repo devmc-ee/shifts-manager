@@ -1,5 +1,5 @@
 import { ThemeProvider } from '@emotion/react';
-import { CssBaseline } from '@mui/material';
+// import CssBaseline from '@mui/material/CssBaseline';
 import createTheme from '@mui/system/createTheme/createTheme';
 
 type ThemeProp = {
@@ -7,7 +7,7 @@ type ThemeProp = {
 };
 
 export enum themePalette {
-    MAIN = 'n000',
+    MAIN = '#000',
     LIGHT = '#FDEB01',
 }
 
@@ -24,7 +24,7 @@ const theme = createTheme({
 export const ThemeConfig: React.FC<ThemeProp> = ({ children }) => {
     return (
         <ThemeProvider theme={theme}>
-            <CssBaseline />
+            {/* <CssBaseline /> */}
             {children}
         </ThemeProvider>
     );
