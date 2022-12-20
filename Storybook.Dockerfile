@@ -1,8 +1,9 @@
 FROM node:18-alpine
+RUN apk update && apk upgrade
 WORKDIR /app
-COPY package.json .
-COPY yarn.lock .
-RUN ["yarn", "install"]
+COPY package.json ./package.json
+COPY package-lock.json .
+RUN ["npm", "install"]
 COPY . .
 EXPOSE 6006
-CMD ["yarn", "storybook"]
+CMD ["npm", "run", "storybook"]

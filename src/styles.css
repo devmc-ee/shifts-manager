@@ -2,10 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-h1 {
-    color: red;
+:root {
+  --primary-color: #212121;
+  --primary-color-light: #484848;
+  --primary-color-dark: #000000;
+  --primary-color-contrast-text: #ffffff;
+
+  --secondary-color: #fdeb01;
+  --secondary-color-light: #ffff56;
+  --secondary-color-dark: #c6b900;
+  --secondary-color-contrast-text: #000000;
+}
+
+/* example  */
+.element-with-css-var {
+  color: var(--primary-color);
 }
 
 .font-bold {
-    font-weight: 600;
+  font-weight: 600;
 }
