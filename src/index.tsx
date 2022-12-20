@@ -6,6 +6,8 @@ import { Provider } from 'react-redux';
 import { store } from './config/redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistStore } from 'redux-persist';
+import { ThemeProvider } from '@mui/material';
+import { theme } from './config/styles/theme';
 
 const container = document.getElementById('root');
 const root = createRoot(container!);
@@ -16,7 +18,9 @@ root.render(
     <BrowserRouter>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistedStore}>
-          <App />
+          <ThemeProvider theme={theme}>
+            <App />
+          </ThemeProvider>
         </PersistGate>
       </Provider>
     </BrowserRouter>
