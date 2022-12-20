@@ -1,5 +1,5 @@
 import './styles.css';
-import CssBaseline from '@mui/material/CssBaseline';
+// import CssBaseline from '@mui/material/CssBaseline';
 import { Link, Route, Routes } from 'react-router-dom';
 import { Dashboard, Login } from './pages';
 import { ProtectedRoute } from './core/auth/components/ProtectedRoute';
@@ -11,7 +11,6 @@ import { ShiftsPage, NewShiftPage } from './shift/components';
 export const App = () => {
     return (
         <>
-            <CssBaseline />
             <Routes>
                 <Route path={routes.login} element={<Login />} />
                 <Route

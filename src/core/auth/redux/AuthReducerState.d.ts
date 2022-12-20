@@ -1,4 +1,4 @@
-export interface AuthReducreState {
+export interface AuthReducerState {
     userName: string;
     token: null | {
         jwt: string;

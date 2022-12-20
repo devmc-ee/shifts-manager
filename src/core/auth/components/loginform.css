@@ -1,0 +1,19 @@
+.login-form {
+    width: 100%;
+    height: 100vh;
+    max-width: 32rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.input-fields {
+    width: 100%;
+}
+
+.input-field-holder {
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
