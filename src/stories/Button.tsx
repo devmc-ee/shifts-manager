@@ -1,10 +1,11 @@
 import './button.css';
+import MUButton from '@mui/material/Button';
 
 interface ButtonProps {
   /**
    * Is this the principal call to action on the page?
    */
-  primary?: boolean;
+  color?: 'primary' | 'secondary';
   /**
    * What background color to use
    */
@@ -21,17 +22,12 @@ interface ButtonProps {
    * Optional click handler
    */
   onClick?: () => void;
+  disabled?: boolean;
 }
 
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({ primary = false, size = 'medium', backgroundColor, label, ...props }: ButtonProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
-
-  return (
-    <button type="button" className={['storybook-button', `storybook-button--${size}`, mode].join(' ')} style={{ backgroundColor }} {...props}>
-      {label}
-    </button>
-  );
+export const Button = ({ label, ...props }: ButtonProps) => {
+  return <MUButton {...props}>{label}</MUButton>;
 };

@@ -1,7 +1,7 @@
 FROM node:18-alpine
 RUN apk update && apk upgrade
 WORKDIR /app
-COPY package.storybook.json ./package.json
+COPY package.json ./package.json
 COPY package-lock.json .
 RUN ["npm", "install"]
 COPY . .
