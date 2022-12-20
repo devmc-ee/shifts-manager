@@ -1,3 +1,3 @@
 export const NewShiftContainer = () => {
-    return <div>NewShiftContainer</div>;
+  return <div>NewShiftContainer</div>;
 };

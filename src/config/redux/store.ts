@@ -7,29 +7,29 @@ import { persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } fro
 import { staffReducer } from '../../staff/redux/staffSlice';
 
 const rootReducer = combineReducers({
-    // staff: staffReducer,
-    // shifts: shiftsReducer,
-    // unitWorkingTime: unitWorkingTimeReducer,
-    // organisation: orgReducer,
-    auth: authReducer,
-    staff: staffReducer,
+  // staff: staffReducer,
+  // shifts: shiftsReducer,
+  // unitWorkingTime: unitWorkingTimeReducer,
+  // organisation: orgReducer,
+  auth: authReducer,
+  staff: staffReducer,
 });
 
 const persistConfig = {
-    key: 'root',
-    storage,
+  key: 'root',
+  storage,
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
-    reducer: persistedReducer,
-    middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware({
-            serializableCheck: {
-                ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-            },
-        }),
+  reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
 });
 
 export type AppState = ReturnType<typeof store.getState>;

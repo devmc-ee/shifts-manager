@@ -8,37 +8,37 @@ import { routes } from '../../routing/routes';
 // eslint-disable-next-line react/display-name
 
 export const LoginFormContainer = () => {
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
-    const location = useLocation();
-    const userName = useSelector(selectUserName, shallowEqual);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const userName = useSelector(selectUserName, shallowEqual);
 
-    const [password, setPassword] = useState('');
+  const [password, setPassword] = useState('');
 
-    const isDisabled = useMemo(() => userName === '' && password === '', [userName, password]);
+  const isDisabled = useMemo(() => userName === '' && password === '', [userName, password]);
 
-    const handleChangeUserName = ({ target }: ChangeEvent<HTMLInputElement>) => {
-        dispatch(changeUserName(target.value));
-    };
+  const handleChangeUserName = ({ target }: ChangeEvent<HTMLInputElement>) => {
+    dispatch(changeUserName(target.value));
+  };
 
-    const handleChangePassword = ({ target }: ChangeEvent<HTMLInputElement>) => {
-        setPassword(() => target.value);
-    };
+  const handleChangePassword = ({ target }: ChangeEvent<HTMLInputElement>) => {
+    setPassword(() => target.value);
+  };
 
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    //@ts-ignore
-    const from = location.state?.from?.pathname || routes.protected.dashboard;
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  //@ts-ignore
+  const from = location.state?.from?.pathname || routes.protected.dashboard;
 
-    const submitHandle = () => {
-        dispatch(setLoggedIn());
-        navigate(from, { replace: true });
-    };
+  const submitHandle = () => {
+    dispatch(setLoggedIn());
+    navigate(from, { replace: true });
+  };
 
-    const loginFormProps = { handleChangeUserName, isDisabled, handleChangePassword, submitHandle, title: '[ta-rung]' };
+  const loginFormProps = { handleChangeUserName, isDisabled, handleChangePassword, submitHandle, title: '[ta-rung]' };
 
-    return (
-        <div className="login-form-container">
-            <LoginForm {...loginFormProps} />
-        </div>
-    );
+  return (
+    <div className="login-form-container">
+      <LoginForm {...loginFormProps} />
+    </div>
+  );
 };

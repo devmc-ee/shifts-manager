@@ -5,7 +5,7 @@ up-build-sb:
 up:
 	docker-compose up shifts-manager-app
 up-sb:
-	docker-compose up storybook
+	docker-compose up storybook 
 
 down:
 	docker-compose down --remove-orphans
