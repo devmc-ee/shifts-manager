@@ -14,7 +14,7 @@ i18n
   .use(initReactI18next)
   //all options read: https://www.i18next.com/overview/configuration-options
   .init({
-    fallbackLng: 'en-US',
+    fallbackLng: 'en',
     resources: {
       en: {
         translation: en,
