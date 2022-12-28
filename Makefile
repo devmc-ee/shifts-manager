@@ -1,5 +1,5 @@
 up-build:
-	docker-compose up --build --force-recreate --remove-orphans shifts-manager-app
+	docker-compose up --build --force-recreate --remove-orphans shifts-manager-app 
 up-build-sb:
 	docker-compose up --build --force-recreate --remove-orphans storybook
 up:
@@ -9,6 +9,11 @@ up-sb:
 
 down:
 	docker-compose down --remove-orphans
+
+clear: 
+	docker container prune
+	docker volume rm shifts-manager_app
+	docker volume rm shifts-manager_node_modules
 
 build:
 	yarn build
