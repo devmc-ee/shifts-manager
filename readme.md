@@ -1,3 +1,2 @@
-Install the following plugins in the VSCode:
-- eslint
-- prettier - Code formater
+# Shift manager
+Employee working time management system
