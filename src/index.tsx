@@ -8,6 +8,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { persistStore } from 'redux-persist';
 import { ThemeProvider } from '@mui/material';
 import { theme } from './config/styles/theme';
+import './config/i18n';
 
 const container = document.getElementById('root');
 const root = createRoot(container!);

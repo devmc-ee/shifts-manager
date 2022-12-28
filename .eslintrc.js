@@ -30,4 +30,5 @@ module.exports = {
       version: 'detect',
     },
   },
+  ignorePatterns: ['*.json', '**/*.json'],
 };
