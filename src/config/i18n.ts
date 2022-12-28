@@ -16,7 +16,7 @@ i18n
   .init({
     fallbackLng: 'en-US',
     resources: {
-      'en-US': {
+      en: {
         translation: en,
       },
       et: {
