@@ -10,5 +10,10 @@ up-sb:
 down:
 	docker-compose down --remove-orphans
 
+clear: 
+	docker container prune
+	docker volume rm shifts-manager_app
+	docker volume rm shifts-manager_node_modules
+
 build:
 	yarn build
