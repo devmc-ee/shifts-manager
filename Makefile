@@ -1,5 +1,5 @@
 up-build:
-	docker-compose up --build --force-recreate --remove-orphans shifts-manager-app 
+	docker-compose up --build --force-recreate --remove-orphans shifts-manager-app
 up-build-sb:
 	docker-compose up --build --force-recreate --remove-orphans storybook
 up:
