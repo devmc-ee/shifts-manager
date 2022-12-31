@@ -1,9 +1,7 @@
 import { LoginForm } from './LoginForm';
 import { ChangeEvent, useMemo } from 'react';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
-import { selectUserName, selectIsLoading, changeUserName, selectErrorMessage, changePassword, selectPassword, setIsLoading } from '../redux/authSlice';
-
-// eslint-disable-next-line react/display-name
+import { selectUserName, selectIsLoading, changeUserName, selectErrorMessage, changePassword, selectPassword, setIsLoading } from '../../redux/authSlice';
 
 export const LoginFormContainer = () => {
   const dispatch = useDispatch();
@@ -22,9 +20,6 @@ export const LoginFormContainer = () => {
   const handleChangePassword = ({ target }: ChangeEvent<HTMLInputElement>) => {
     dispatch(changePassword(target.value));
   };
-
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  //@ts-ignore
 
   const handleSubmit = () => {
     dispatch(setIsLoading(true));

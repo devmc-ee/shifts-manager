@@ -1,5 +1,5 @@
 import { ChangeEvent, useState } from 'react';
-import { LoginButton } from './LoginButton/LoginButton';
+import { LoginButton } from '../LoginButton/LoginButton';
 import Alert from '@mui/material/Alert';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';

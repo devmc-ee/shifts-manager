@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ChangeEvent, useEffect, useState } from 'react';
 import { LoginForm } from './LoginForm';
-import { selectUserName, changeUserName, changePassword, selectPassword, selectIsLoading, setIsLoading } from '../redux/authSlice';
+import { selectUserName, changeUserName, changePassword, selectPassword, selectIsLoading, setIsLoading } from '../../redux/authSlice';
 import { useSelector, useDispatch, shallowEqual } from 'react-redux';
 
 export default {
@@ -49,8 +49,6 @@ const Template: ComponentStory<typeof LoginForm> = (args) => {
   return (
     <>
       <LoginForm {...loginFormProps} />
-      <div>Username: {userName}</div>
-      <div>Password: {password}</div>
     </>
   );
 };

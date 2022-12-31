@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from '../../../components/LanguageSwitcher';
 import { Page } from '../../../components/Page/Page';
-import { LoginFormContainer } from '../../components/LoginFormContainer';
+import { LoginFormContainer } from '../../components/LoginForm/LoginFormContainer';
 
 export const Login = () => {
   const { t } = useTranslation();
