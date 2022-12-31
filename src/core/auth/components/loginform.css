@@ -1,19 +1,111 @@
+h1 {
+  justify-content: center;
+  display: flex;
+  margin: 2rem 0 5rem 0;
+}
+
+.login-form-container {
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+}
+
 .login-form {
-    width: 100%;
-    height: 100vh;
-    max-width: 32rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
+  width: 100%;
+  max-width: 32rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: 0.8rem 0.8rem;
+  box-sizing: border-box;
 }
 
-.input-fields {
-    width: 100%;
+.login-form__field-container {
+  padding-bottom: 2rem;
 }
 
-.input-field-holder {
-    width: 100%;
-    margin-bottom: 1.5rem;
+.login-form__field-container--lang {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.language-setting__globe-icon {
+  padding: 0.2rem 0rem 0.4rem 0.4rem;
+  align-items: center;
+  display: flex;
+}
+
+.MuiInput-underline:before {
+  display: none;
+}
+
+.login-form__field-container--password {
+  padding-bottom: 1rem;
+}
+
+.login-form-alert-box,
+.MuiAlert-root {
+  display: flex;
+  height: 3rem;
+  width: 100%;
+  max-width: 32rem;
+  margin-bottom: 1rem;
+}
+
+.login-form__login-btn-container {
+  text-align: center;
+}
+
+.MuiOutlinedInput-root.Mui-focused {
+  background-color: var(--primary-dark);
+}
+
+.MuiFormLabel-root.MuiInputLabel-shrink {
+  color: var(--primary-dark);
+  font-weight: bold;
+}
+
+.MuiInputLabel-root.Mui-focused {
+  color: var(--primary-dark);
+  font-weight: bold;
+}
+
+.MuiButton-contained {
+  height: 3.5rem;
+}
+
+.login-form__input .MuiOutlinedInput-input {
+  padding: 0.938rem 1rem;
+}
+
+.login-form__field-container--lang .app-logo {
+  visibility: hidden;
+  width: 0;
+}
+
+.MuiList-root {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  list-style: none;
+  justify-content: flex-start;
+}
+
+.MuiSelect-select:focus {
+  border-radius: 0;
+}
+
+@media screen and (min-width: 680px) {
+  .login-form__field-container--lang {
+    visibility: visible;
+  }
+
+  h1 {
+    margin: 5rem 0 5rem 0;
+  }
 }

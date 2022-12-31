@@ -1,4 +1,4 @@
-export interface AuthReducerState {
+export interface AuthReducreState {
   userName: string;
   token: null | {
     jwt: string;
@@ -7,4 +7,7 @@ export interface AuthReducerState {
     valid: number;
   };
   isLoggedIn: boolean;
+  isLoading: boolean;
+  errorMessage: string;
+  password: string;
 }
