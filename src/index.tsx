@@ -7,7 +7,7 @@ import { store } from './config/redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistStore } from 'redux-persist';
 import CssBaseline from '@mui/material/CssBaseline';
-import { theme } from './config/styles/theme';
+import { theme } from './config/theme';
 import { ThemeProvider } from '@mui/material';
 import './config/i18n';
 
