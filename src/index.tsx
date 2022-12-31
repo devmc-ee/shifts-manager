@@ -9,6 +9,7 @@ import { persistStore } from 'redux-persist';
 import CssBaseline from '@mui/material/CssBaseline';
 import { theme } from './config/styles/theme';
 import { ThemeProvider } from '@mui/material';
+import './config/i18n';
 
 const container = document.getElementById('root');
 const root = createRoot(container!);

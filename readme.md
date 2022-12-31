@@ -1,3 +1,12 @@
-Install the following plugins in the VSCode:
-- eslint
-- prettier - Code formater
+# Shift manager
+Employee working time management system
+
+## Start on a local machine
+```bash
+npm i
+npm run start
+```
+## Start in docker container
+```bash
+make up-build
+```
