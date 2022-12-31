@@ -25,7 +25,7 @@ export const LoginFormContainer = () => {
     dispatch(setIsLoading(true));
   };
 
-  const loginFormProps = { handleChangeUserName, isSubmitDisabled, isLoading, handleChangePassword, handleSubmit, errorMessage, title: '[ta-rung]' };
+  const loginFormProps = { handleChangeUserName, isSubmitDisabled, isLoading, handleChangePassword, handleSubmit, errorMessage };
 
   return (
     <div className="login-form-container">

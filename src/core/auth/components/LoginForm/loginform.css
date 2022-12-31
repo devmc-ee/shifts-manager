@@ -1,4 +1,4 @@
-h1 {
+.login-form__app-title {
   justify-content: center;
   display: flex;
   margin: 2rem 0 5rem 0;
@@ -105,7 +105,7 @@ h1 {
     visibility: visible;
   }
 
-  h1 {
+  .login-form__app-title {
     margin: 5rem 0 5rem 0;
   }
 }
