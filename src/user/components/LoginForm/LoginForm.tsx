@@ -9,9 +9,9 @@ import OutlinedInput from '@mui/material/OutlinedInput/OutlinedInput';
 import IconButton from '@mui/material/IconButton/IconButton';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import './loginform.css';
+import './LoginForm.css';
 
-interface LoginFormProps {
+export interface LoginFormProps {
   handleChangeUserName: ({ target }: ChangeEvent<HTMLInputElement>) => void;
   handleChangePassword: ({ target }: ChangeEvent<HTMLInputElement>) => void;
   handleSubmit: () => void;
@@ -20,7 +20,14 @@ interface LoginFormProps {
   errorMessage: string;
 }
 
-export const LoginForm = ({ handleChangeUserName, handleChangePassword, handleSubmit, isSubmitDisabled, isLoading, errorMessage }: LoginFormProps): JSX.Element => {
+export const LoginForm = ({
+  handleChangeUserName,
+  handleChangePassword,
+  handleSubmit,
+  isSubmitDisabled,
+  isLoading,
+  errorMessage,
+}: LoginFormProps): JSX.Element => {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -32,11 +39,18 @@ export const LoginForm = ({ handleChangeUserName, handleChangePassword, handleSu
   return (
     <form className="login-form">
       <div className="login-form-container login-form-input">
-        <div className="login-form__field-container login-form__field-container--lang">
-          <div className="language-setting__select"></div>
-        </div>
         <div className="login-form__field-container login-form__field-container--username">
-          <TextField error={!!errorMessage} disabled={isLoading} fullWidth id="outlined-basic" label="Username" variant="outlined" type="text" name="username" onChange={handleChangeUserName} />
+          <TextField
+            error={!!errorMessage}
+            disabled={isLoading}
+            fullWidth
+            id="outlined-basic"
+            label="Username"
+            variant="outlined"
+            type="text"
+            name="username"
+            onChange={handleChangeUserName}
+          />
         </div>
         <div className="login-form__field-container login-form__field-container--password">
           <FormControl disabled={isLoading} error={!!errorMessage} fullWidth id="outlined-basic" variant="outlined" onChange={handleChangePassword}>
@@ -49,8 +63,14 @@ export const LoginForm = ({ handleChangeUserName, handleChangePassword, handleSu
               type={showPassword ? 'text' : 'password'}
               endAdornment={
                 <InputAdornment position="end">
-                  <IconButton disabled={isLoading} aria-label="toggle password visibility" onClick={handleClickShowPassword} onMouseDown={handleMouseDownPassword} edge="end">
-                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                  <IconButton
+                    disabled={isLoading}
+                    aria-label="toggle password visibility"
+                    onClick={handleClickShowPassword}
+                    onMouseDown={handleMouseDownPassword}
+                    edge="end"
+                  >
+                    {!showPassword ? <VisibilityOff /> : <Visibility />}
                   </IconButton>
                 </InputAdornment>
               }
@@ -58,10 +78,14 @@ export const LoginForm = ({ handleChangeUserName, handleChangePassword, handleSu
             />
           </FormControl>
         </div>
-        <div className="login-form-alert-box">{errorMessage && <Alert severity="error">{errorMessage}</Alert>}</div>
-        <div className="login-form__field-container login-form__login-btn-container ">
-          <LoginButton loading={isLoading} label="loading-button" onClick={handleSubmit} disabled={isSubmitDisabled || isLoading || !!errorMessage} />
-        </div>
+        {errorMessage && (
+          <div className="login-form-alert-box">
+            <Alert severity="error">{errorMessage}</Alert>
+          </div>
+        )}
+      </div>
+      <div className="login-form__field-container login-form__login-btn-container ">
+        <LoginButton loading={isLoading} label="loading-button" onClick={handleSubmit} disabled={isSubmitDisabled || isLoading || !!errorMessage} />
       </div>
     </form>
   );

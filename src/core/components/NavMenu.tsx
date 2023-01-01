@@ -1,11 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
-import { useAppDispatch } from '../../config/redux/hooks';
-import { setLoggedOut } from '../auth/redux/authSlice';
 import { routes } from '../routing/routes';
 
 export const NavMenu = (): JSX.Element => {
-  const dispatch = useAppDispatch();
-
   const { pathname } = useLocation();
 
   const getActiveRouteClass = (route: string) => {
@@ -33,9 +29,7 @@ export const NavMenu = (): JSX.Element => {
           <Link to={routes.protected.shifts}>Shifts</Link>
         </li>
         <li>
-          <Link onClick={() => dispatch(setLoggedOut())} to={routes.login}>
-            Logout
-          </Link>
+          <Link to={routes.login}>Logout</Link>
         </li>
       </ul>
     </nav>

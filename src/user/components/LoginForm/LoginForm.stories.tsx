@@ -1,8 +1,8 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ChangeEvent, useEffect, useState } from 'react';
 import { LoginForm } from './LoginForm';
-import { selectUserName, changeUserName, changePassword, selectPassword, selectIsLoading, setIsLoading } from '../../redux/authSlice';
-import { useSelector, useDispatch, shallowEqual } from 'react-redux';
+import { changeUserName, changePassword, setIsLoading } from '../../redux/loginSlice';
+import { useAppDispatch, useAppSelector } from '../../../config/redux/hooks';
 
 export default {
   title: 'LoginForm/LoginForm',
@@ -10,10 +10,10 @@ export default {
 } as ComponentMeta<typeof LoginForm>;
 
 const Template: ComponentStory<typeof LoginForm> = (args) => {
-  const dispatch = useDispatch();
-  const userName = useSelector(selectUserName, shallowEqual);
-  const password = useSelector(selectPassword, shallowEqual);
-  const isLoading = useSelector(selectIsLoading, shallowEqual);
+  const dispatch = useAppDispatch();
+  const userName = useAppSelector(({ login }) => login.userName);
+  const password = useAppSelector(({ login }) => login.password);
+  const isLoading = useAppSelector(({ login }) => login.isLoading);
 
   const [isSubmitDisabled, setIsSubmitDisabled] = useState(!!args?.isSubmitDisabled);
   const [errorMessage, setErrorMessage] = useState(args?.errorMessage || '');
@@ -44,7 +44,15 @@ const Template: ComponentStory<typeof LoginForm> = (args) => {
     }
   }, [userName, password]);
 
-  const loginFormProps = { ...args, errorMessage, handleSubmit, isLoading, isSubmitDisabled, handleChangeUserName: onUserNameChange, handleChangePassword: onPasswordChange };
+  const loginFormProps = {
+    ...args,
+    errorMessage,
+    handleSubmit,
+    isLoading,
+    isSubmitDisabled,
+    handleChangeUserName: onUserNameChange,
+    handleChangePassword: onPasswordChange,
+  };
 
   return (
     <>

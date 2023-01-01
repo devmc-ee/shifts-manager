@@ -21,7 +21,7 @@ root.render(
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistedStore}>
           <ThemeProvider theme={theme}>
-            <CssBaseline />
+            <CssBaseline enableColorScheme={true} />
             <App />
           </ThemeProvider>
         </PersistGate>

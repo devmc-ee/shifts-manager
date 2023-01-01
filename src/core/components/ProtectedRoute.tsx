@@ -5,7 +5,7 @@ import { useAppSelector } from '../../config/redux/hooks';
 
 export const ProtectedRoute = ({ children }: { children: JSX.Element }): JSX.Element => {
   const location = useLocation();
-  const isLoggedIn = useAppSelector(({ auth }: AppState) => auth.isLoggedIn);
+  const isLoggedIn = useAppSelector(({ user }: AppState) => user.isLoggedIn);
 
   if (!isLoggedIn) {
     return <Navigate to={routes.login} state={{ from: location }} replace />;

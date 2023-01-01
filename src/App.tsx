@@ -1,7 +1,7 @@
 import './styles.css';
 import { Link, Route, Routes } from 'react-router-dom';
 import { Dashboard, Login } from './pages';
-import { ProtectedRoute } from './core/auth/ProtectedRoute';
+import { ProtectedRoute } from './core/components/ProtectedRoute';
 import { routes } from './core/routing/routes';
 import { NewStaffPage, StaffPage } from './staff/components';
 import { RootNavLayout } from './core/components/RootNavLayout';
