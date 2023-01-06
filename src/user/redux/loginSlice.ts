@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 // eslint-disable-next-line import/no-unresolved
-import { LoginReducreState } from './LoginReducreState';
+import { LoginReducerState } from './LoginReducerState';
 
-const initialState: LoginReducreState = {
+const initialState: LoginReducerState = {
   userName: '',
   errorMessage: '',
   isLoading: false,

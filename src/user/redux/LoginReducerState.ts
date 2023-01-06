@@ -1,4 +1,4 @@
-export interface LoginReducreState {
+export interface LoginReducerState {
   userName: string;
   password: string;
   isLoading: boolean;

@@ -9,6 +9,9 @@ export const Login = () => {
   return (
     <Page classes="login">
       <div className="login-form__app-title">{title}</div>
+      <div className="login-form__lang-settings-container">
+        <div className="login-form__field-container--lang"></div>
+      </div>
       <LoginForm />
     </Page>
   );
