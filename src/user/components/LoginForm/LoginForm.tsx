@@ -39,7 +39,7 @@ export const LoginForm = ({
   return (
     <form className="login-form">
       <div className="login-form-container login-form-input">
-        <div className="login-form__field-container login-form__field-container--username">
+        <div className="login-form__field-container login-form__field-container-username">
           <TextField
             error={!!errorMessage}
             disabled={isLoading}
@@ -52,7 +52,7 @@ export const LoginForm = ({
             onChange={handleChangeUserName}
           />
         </div>
-        <div className="login-form__field-container login-form__field-container--password">
+        <div className="login-form__field-container login-form__field-container-password">
           <FormControl disabled={isLoading} error={!!errorMessage} fullWidth id="outlined-basic" variant="outlined" onChange={handleChangePassword}>
             <InputLabel disabled={isLoading} error={!!errorMessage} htmlFor="outlined-adornment-password">
               Password
@@ -79,7 +79,7 @@ export const LoginForm = ({
           </FormControl>
         </div>
         {errorMessage && (
-          <div className="login-form-alert-box">
+          <div className="login-form__field-container login-form-alert-box">
             <Alert severity="error">{errorMessage}</Alert>
           </div>
         )}

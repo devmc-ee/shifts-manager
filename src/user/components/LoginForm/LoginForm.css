@@ -1,69 +1,35 @@
-.login__page {
-  display: grid;
-  grid-template-rows: 2fr 1.2fr 3fr;
-  height: 100vh;
-  justify-items: center;
-}
-
-.login-form__app-title {
-  display: flex;
-  align-items: end;
-  justify-content: center;
-  font-weight: 400;
-  font-size: 2.63rem;
-  width: 100%;
-  max-width: 32rem;
-}
-
-.login-form__lang-settings-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  width: 100%;
-  max-width: 32rem;
-}
-
-.login-form__field-container--lang {
-  padding-right: 0.8rem;
-  align-items: right;
-  text-align: right;
-  width: 100%;
-  max-width: 32rem;
-}
-
 .login-form-container {
   place-items: center;
   padding: 0;
   position: relative;
   width: 100%;
+  height: 100%;
   max-width: 32rem;
 }
 
 .login-form {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   width: 100%;
   height: 100%;
   max-width: 32rem;
   padding: 0.8rem 0.8rem;
-  align-content: space-between;
+  align-content: space-around;
 }
 
 .login-form-alert-box {
   position: absolute;
   width: 100%;
   max-width: 32rem;
-  height: 3rem;
-  top: 68%;
 }
 
 .MuiPaper-root.MuiAlert-root {
   box-sizing: border-box;
-  position: absolute;
+  position: relative;
   vertical-align: center;
   width: 100%;
   max-width: 32rem;
-  height: 3rem;
-  top: 68%;
   margin-bottom: 1rem;
 }
 
@@ -79,10 +45,14 @@
   width: 100%;
 }
 
+.login-form__field-container-password {
+  padding-bottom: 1rem;
+}
+
 .login-form__login-btn-container {
-  display: grid;
+  display: flex;
   text-align: center;
-  margin-top: 1.75rem;
+  margin-top: 4rem;
 }
 
 .MuiOutlinedInput-root.Mui-focused {
@@ -134,10 +104,6 @@
 
 @media screen and (min-width: 680px) {
   .login-form {
-    align-content: baseline;
-  }
-
-  .login__page {
-    grid-template-rows: 1.7fr 0.5fr 3fr;
+    height: auto;
   }
 }
