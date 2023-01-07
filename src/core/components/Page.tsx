@@ -1,4 +1,4 @@
-import { addPostfixToClasses } from '../../utils/addPostfixToClasses';
+import { addPostfixToClasses } from '../utils/addPostfixToClasses';
 
 interface PageProps {
   classes: string;

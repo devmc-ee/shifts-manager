@@ -1,14 +1,10 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { useAppSelector } from '../config/redux/hooks';
-import { setLoggedIn } from '../core/auth/redux/authSlice';
 
 import { Button } from './Button';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Example/Button',
+  title: 'Button',
   component: Button,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
@@ -18,14 +14,7 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Button> = (args) => {
-  const dispatch = useDispatch();
-  const isLoggedIn = useAppSelector(({ auth }) => auth.isLoggedIn);
-
-  useEffect(() => {
-    dispatch(setLoggedIn());
-  }, [dispatch]);
-
-  return <Button disabled={isLoggedIn} {...args} />;
+  return <Button {...args} />;
 };
 
 export const Primary = Template.bind({});
