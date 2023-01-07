@@ -6,7 +6,7 @@ const webpack = require('webpack');
 
 module.exports = ({ env }) => {
   const dotEnvConfParsed = dotenv.config({
-    path: path.resolve(__dirname, '..', `./${env === 'dev' ? './.env.local' : './env.production'}`),
+    path: path.resolve(__dirname, '..', `./.env.${env === 'dev' ? 'local' : 'production'}`),
     debug: true,
   }).parsed;
 
