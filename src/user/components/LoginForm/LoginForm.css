@@ -1,0 +1,109 @@
+.login-form-container {
+  place-items: center;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 32rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+  max-width: 32rem;
+  padding: 0.8rem 0.8rem;
+  align-content: space-around;
+}
+
+.login-form-alert-box {
+  position: absolute;
+  width: 100%;
+  max-width: 32rem;
+}
+
+.MuiPaper-root.MuiAlert-root {
+  box-sizing: border-box;
+  position: relative;
+  vertical-align: center;
+  width: 100%;
+  max-width: 32rem;
+  margin-bottom: 1rem;
+}
+
+.language-switcher-select-standard.MuiInputBase-root.MuiInput-root {
+  display: flex;
+  height: 2rem;
+  padding: 0 0.5rem;
+  justify-content: center;
+}
+
+.login-form__field-container {
+  padding-bottom: 2rem;
+  width: 100%;
+}
+
+.login-form__field-container-password {
+  padding-bottom: 1rem;
+}
+
+.login-form__login-btn-container {
+  display: flex;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.MuiOutlinedInput-root.Mui-focused {
+  background-color: var(--primary-dark);
+}
+
+.MuiFormLabel-root.MuiInputLabel-shrink {
+  color: var(--primary-dark);
+  font-weight: bold;
+  padding: 0;
+}
+
+.MuiInputLabel-root.Mui-focused {
+  color: var(--primary-dark);
+  font-weight: bold;
+  padding: 0;
+}
+
+.MuiButtonBase-root.MuiMenuItem-root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.MuiFormLabel-root.MuiInputLabel,
+.MuiInputLabel-root {
+  text-align: center;
+}
+
+.MuiButton-contained {
+  height: 3.5rem;
+}
+
+.login-form__input .MuiOutlinedInput-input {
+  padding: 0.938rem 1rem;
+}
+
+.login-form__field-container .MuiOutlinedInput-root {
+  height: 3.75rem;
+}
+
+.MuiList-root {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  justify-content: center;
+}
+
+@media screen and (min-width: 680px) {
+  .login-form {
+    height: auto;
+  }
+}

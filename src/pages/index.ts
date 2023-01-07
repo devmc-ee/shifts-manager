@@ -1,2 +1,2 @@
-export { Login } from '../core/auth/pages/Login';
+export { Login } from './Login';
 export { Dashboard } from './Dashboard';

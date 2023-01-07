@@ -1,0 +1,24 @@
+.login__page {
+  display: grid;
+  grid-template-rows: 2fr 3fr;
+  height: 100vh;
+  justify-items: center;
+}
+
+.login-page__app-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 2.63rem;
+  width: 100%;
+  max-width: 32rem;
+}
+
+.login-page__form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 32rem;
+}

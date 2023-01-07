@@ -1,5 +1,6 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import { authReducer } from '../../core/auth/redux/authSlice';
+import { loginReducer } from '../../user/redux/loginSlice';
+import { userReducer } from '../../user/redux/userSlice';
 import storage from 'redux-persist/lib/storage';
 
 import { persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist';
@@ -11,13 +12,15 @@ const rootReducer = combineReducers({
   // shifts: shiftsReducer,
   // unitWorkingTime: unitWorkingTimeReducer,
   // organisation: orgReducer,
-  auth: authReducer,
+  user: userReducer,
+  login: loginReducer,
   staff: staffReducer,
 });
 
 const persistConfig = {
   key: 'root',
   storage,
+  blacklist: ['login'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

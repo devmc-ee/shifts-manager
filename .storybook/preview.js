@@ -1,5 +1,5 @@
 import { ThemeProvider } from "@mui/material";
-import { theme } from '../src/config/styles/theme.ts';
+import { theme } from '../src/config/theme.ts';
 import { Provider } from 'react-redux';
 import { store } from '../src/config/redux/store';
 import { BrowserRouter } from 'react-router-dom';
