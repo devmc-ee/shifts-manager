@@ -28,3 +28,6 @@ clear:
 
 build:
 	yarn build
+
+i:
+	docker exec -it shifts-manager npm i
