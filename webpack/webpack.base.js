@@ -4,8 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: path.resolve(__dirname, '..', './src/index.tsx'),
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
-    fallback: { os: false, path: false },
+    extensions: ['.tsx', '.ts', '.js', 'd.ts'],
   },
   module: {
     rules: [
@@ -40,8 +39,5 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '..', './src/assets/index.html'),
     }),
-    // new CopyPlugin({
-    //     patterns: [{ from: 'source', to: 'dist' }],
-    // }),
   ],
 };

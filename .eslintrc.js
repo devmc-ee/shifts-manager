@@ -25,9 +25,16 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     'newline-before-return': ['error'],
   },
+  plugins: ['prettier', '@typescript-eslint'],
   settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
     react: {
       version: 'detect',
     },
   },
+  root: true,
 };
