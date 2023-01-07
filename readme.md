@@ -1,6 +1,8 @@
 # Shift manager
-Employee working time management system
+Employee time management system
 
+Duplicate .env file and rename the duplicate to .env.local. 
+Add all required values 
 ## Start on a local machine
 ```bash
 npm i
