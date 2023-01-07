@@ -3,7 +3,6 @@ const baseConfig = require('./webpack.base.js');
 const path = require('path');
 const dotenv = require('dotenv');
 const webpack = require('webpack');
-// const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = ({ env }) => {
   const dotEnvConfParsed = dotenv.config({
@@ -16,7 +15,7 @@ module.exports = ({ env }) => {
   if (dotEnvConfParsed) {
     const confParsed = {};
     for (const envItem in dotEnvConfParsed) {
-      confParsed['process.env.' + envItem] = JSON.stringify(dotEnvConfParsed[envItem]);
+      confParsed['REACT_APP_' + envItem] = JSON.stringify(dotEnvConfParsed[envItem]);
     }
 
     envConfig.plugins.push(new webpack.DefinePlugin(confParsed));
