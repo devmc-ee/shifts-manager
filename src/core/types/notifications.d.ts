@@ -7,4 +7,5 @@ export interface NotificationObject {
   id: string;
   message: string;
   level: NotificationLevelType;
+  source: unknown;
 }
