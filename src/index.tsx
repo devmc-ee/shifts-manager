@@ -9,6 +9,7 @@ import { persistStore } from 'redux-persist';
 import CssBaseline from '@mui/material/CssBaseline';
 import { theme } from './config/theme';
 import { ThemeProvider } from '@mui/material';
+import { SnackbarProvider } from 'notistack';
 import './config/i18n';
 
 const container = document.getElementById('root');
@@ -22,7 +23,9 @@ root.render(
         <PersistGate loading={null} persistor={persistedStore}>
           <ThemeProvider theme={theme}>
             <CssBaseline enableColorScheme={true} />
-            <App />
+            <SnackbarProvider autoHideDuration={4000} anchorOrigin={{ vertical: 'top', horizontal: 'center' }}>
+              <App />
+            </SnackbarProvider>
           </ThemeProvider>
         </PersistGate>
       </Provider>

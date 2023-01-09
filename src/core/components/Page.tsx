@@ -1,5 +1,5 @@
+import { useNotisnack } from '../hooks/useNotisnack';
 import { addPostfixToClasses } from '../utils/addPostfixToClasses';
-import { GlobalNotificationContainer as GlobalNotification } from './GlobalNotificationContainer';
 
 interface PageProps {
   classes: string;
@@ -9,10 +9,7 @@ interface PageProps {
 export const Page = ({ classes, children }: PageProps): JSX.Element => {
   const extraClasses = addPostfixToClasses('page', classes);
 
-  return (
-    <div className={`page ${extraClasses}`}>
-      <GlobalNotification />
-      {children}
-    </div>
-  );
+  useNotisnack();
+
+  return <div className={`page ${extraClasses}`}>{children}</div>;
 };
