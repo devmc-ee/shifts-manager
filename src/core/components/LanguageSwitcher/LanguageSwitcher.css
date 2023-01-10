@@ -1,0 +1,60 @@
+.MuiSelect-nativeInput {
+  height: 2rem;
+}
+
+.MuiSvgIcon-root.MuiSelect-icon {
+  transform: none;
+}
+
+.language-switcher-select-standard.MuiInputBase-root.MuiInput-root {
+  display: flex;
+  height: 2rem;
+  justify-content: flex-end;
+  padding-right: 0;
+}
+
+.MuiSelect-select.MuiInputBase-input.MuiInput-input:hover {
+  color: var(--primary-color-dark);
+  font-weight: 500;
+}
+
+.MuiList-root.MuiMenu-list {
+  padding: 0;
+  min-width: 7.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.language-switcher-select-standard,
+.MuiSelect-select.MuiInputBase-input.MuiInput-input {
+  background-color: transparent;
+  text-align: right;
+  min-width: 6.88rem;
+}
+
+.MuiSelect-select.MuiInputBase-input.MuiInput-input.MuiSelect-select.MuiInputBase-input.MuiInput-input.MuiSelect-select.MuiInputBase-input.MuiInput-input {
+  padding-right: 2rem;
+}
+
+.login-form__field-container {
+  padding-bottom: 2rem;
+  width: 100%;
+}
+
+.MuiFormLabel-root.MuiInputLabel,
+.MuiInputLabel-root {
+  text-align: center;
+}
+
+.MuiList-root {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  justify-content: center;
+}
+
+.language-switcher-container.MuiFormControl-root {
+  padding-right: 0.8rem;
+  max-width: 10rem;
+}

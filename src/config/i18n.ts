@@ -8,6 +8,12 @@ import en from '../assets/translations/en.json';
 import et from '../assets/translations/et.json';
 import th from '../assets/translations/th.json';
 
+export const LANGUAGE: { [key: string]: { [key: string]: unknown } } = {
+  EN: en,
+  ET: et,
+  TH: th,
+};
+
 i18n
   .use(Backend)
   .use(LanguageDetector)
@@ -17,13 +23,13 @@ i18n
     fallbackLng: 'en',
     resources: {
       en: {
-        translation: en,
+        translation: LANGUAGE.EN,
       },
       et: {
-        translation: et,
+        translation: LANGUAGE.ET,
       },
       th: {
-        translation: th,
+        translation: LANGUAGE.TH,
       },
     },
     debug: true,
