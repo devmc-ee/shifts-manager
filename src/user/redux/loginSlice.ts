@@ -1,11 +1,8 @@
-import { createSlice } from '@reduxjs/toolkit';
-// eslint-disable-next-line import/no-unresolved
 import { LoginReducerState } from './LoginReducerState';
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState: LoginReducerState = {
   userName: '',
-  errorMessage: '',
-  isLoading: false,
   password: '',
 };
 
@@ -13,20 +10,18 @@ export const loginSlice = createSlice({
   name: 'loginSlice',
   initialState,
   reducers: {
-    USER_NAME_CHANGED: (state, action) => {
-      state.userName = action.payload;
-      state.errorMessage = '';
+    LOGIN_FORM_FIELD_VALUE_CHANGED: (state, action) => {
+      const { fieldName, value } = action.payload;
+
+      state[fieldName as keyof LoginReducerState] = value;
     },
-    PASSWORD_CHANGED: (state, action) => {
-      state.password = action.payload;
-      state.errorMessage = '';
-    },
-    SET_IS_LOADING: (state, action) => {
-      state.isLoading = action.payload;
+    LOGIN_FORM_CLEARED: (state) => {
+      state.password = '';
+      state.userName = '';
     },
   },
 });
 
-export const { USER_NAME_CHANGED: changeUserName, PASSWORD_CHANGED: changePassword, SET_IS_LOADING: setIsLoading } = loginSlice.actions;
+export const { LOGIN_FORM_FIELD_VALUE_CHANGED: changeLoginFormFieldValue, LOGIN_FORM_CLEARED: clearLoginForm } = loginSlice.actions;
 
 export const loginReducer = loginSlice.reducer;

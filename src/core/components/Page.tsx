@@ -1,3 +1,4 @@
+import { useNotisnack } from '../hooks/useNotisnack';
 import { addPostfixToClasses } from '../utils/addPostfixToClasses';
 
 interface PageProps {
@@ -7,6 +8,8 @@ interface PageProps {
 
 export const Page = ({ classes, children }: PageProps): JSX.Element => {
   const extraClasses = addPostfixToClasses('page', classes);
+
+  useNotisnack();
 
   return <div className={`page ${extraClasses}`}>{children}</div>;
 };
