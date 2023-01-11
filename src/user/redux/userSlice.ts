@@ -32,5 +32,5 @@ export const userSlice = createSlice({
   },
 });
 
-export const { TOKEN_CHANGED: changeToken, USER_DATA_CLEARED: clearUserDate } = userSlice.actions;
+export const { TOKEN_CHANGED: changeToken, USER_DATA_CLEARED: clearUserData } = userSlice.actions;
 export const userReducer = userSlice.reducer;

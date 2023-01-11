@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useAppDispatch } from '../../config/redux/hooks';
-import { clearUserDate } from '../../user/redux/userSlice';
+import { clearUserData } from '../../user/redux/userSlice';
 import { routes } from '../routing/routes';
 
 export const NavMenu = (): JSX.Element => {
@@ -19,7 +19,7 @@ export const NavMenu = (): JSX.Element => {
     return isActiveRoute ? activeRouteClassName : '';
   };
 
-  const logout = () => dispatch(clearUserDate());
+  const logout = () => dispatch(clearUserData());
 
   return (
     <nav>
