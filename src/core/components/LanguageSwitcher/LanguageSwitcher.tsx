@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react';
+import { useState } from 'react';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
@@ -10,14 +10,14 @@ import './LanguageSwitcher.css';
 
 interface LanguageSwitcherProps {
   language: string;
-  onChange: (event: ChangeEvent<HTMLSelectElement> | SelectChangeEvent) => void;
+  onChange: (event: SelectChangeEvent<string>) => void;
 }
 
 export const LanguageSwitcher = ({ onChange, language }: LanguageSwitcherProps) => {
   const { t } = useTranslation();
   const [selectedLanguage, setSelectedLanguage] = useState(language);
 
-  const handleLanguageChange = (event: SelectChangeEvent) => {
+  const handleLanguageChange = (event: SelectChangeEvent<string>) => {
     setSelectedLanguage(() => event.target.value);
     onChange(event);
   };
