@@ -1,8 +1,11 @@
 import { Link, useLocation } from 'react-router-dom';
+import { useAppDispatch } from '../../config/redux/hooks';
+import { clearUserData } from '../../user/redux/userSlice';
 import { routes } from '../routing/routes';
 
 export const NavMenu = (): JSX.Element => {
   const { pathname } = useLocation();
+  const dispatch = useAppDispatch();
 
   const getActiveRouteClass = (route: string) => {
     const activeRouteClassName = 'font-bold';
@@ -15,6 +18,8 @@ export const NavMenu = (): JSX.Element => {
 
     return isActiveRoute ? activeRouteClassName : '';
   };
+
+  const logout = () => dispatch(clearUserData());
 
   return (
     <nav>
@@ -29,7 +34,9 @@ export const NavMenu = (): JSX.Element => {
           <Link to={routes.protected.shifts}>Shifts</Link>
         </li>
         <li>
-          <Link to={routes.login}>Logout</Link>
+          <Link onClick={logout} to={routes.login}>
+            Logout
+          </Link>
         </li>
       </ul>
     </nav>

@@ -1,36 +1,39 @@
 import { ChangeEvent, useMemo } from 'react';
+import { changeLoginFormFieldValue } from '../redux/loginSlice';
 import { useAppDispatch, useAppSelector } from '../../config/redux/hooks';
 import { LoginFormProps } from '../components/LoginForm/LoginForm';
-import { changeUserName, changePassword, setIsLoading } from '../redux/loginSlice';
+import { useLoginMutation } from '../api/auth/login';
 
 export const useLoginForm = () => {
   const dispatch = useAppDispatch();
+
   const userName = useAppSelector(({ login }) => login.userName);
-  const isLoading = useAppSelector(({ login }) => login.isLoading);
-  const errorMessage = useAppSelector(({ login }) => login.errorMessage);
   const password = useAppSelector(({ login }) => login.password);
+
+  const [login, { isLoading, error, reset, status }] = useLoginMutation();
 
   const isSubmitDisabled = useMemo(() => userName === '' || password === '', [userName, password]);
 
-  const handleChangeUserName = ({ target }: ChangeEvent<HTMLInputElement>) => {
-    dispatch(changeUserName(target.value));
+  const handleFieldValueChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
+    dispatch(changeLoginFormFieldValue({ fieldName: target.name, value: target.value }));
+
+    if (status !== 'uninitialized') {
+      reset();
+    }
   };
 
-  const handleChangePassword = ({ target }: ChangeEvent<HTMLInputElement>) => {
-    dispatch(changePassword(target.value));
-  };
-
-  const handleSubmit = () => {
-    dispatch(setIsLoading(true));
+  const handleSubmit = async () => {
+    await login({ email: userName, password });
   };
 
   const loginFormProps: LoginFormProps = {
-    handleChangeUserName,
     isSubmitDisabled,
     isLoading,
-    handleChangePassword,
     handleSubmit,
-    errorMessage,
+    handleFieldValueChange,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    //@ts-ignore
+    errorMessage: error?.data?.message || '',
   };
 
   return [loginFormProps];
