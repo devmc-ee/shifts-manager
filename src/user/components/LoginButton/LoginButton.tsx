@@ -10,7 +10,7 @@ interface ButtonProps {
 
 export const LoginButton = ({ disabled = true, loading, ...props }: ButtonProps) => {
   return (
-    <LoadingButton loadingPosition="end" loading={loading} variant="contained" disabled={disabled} fullWidth={true} {...props}>
+    <LoadingButton loadingPosition="end" loading={loading} variant="contained" disabled={disabled} fullWidth={true} endIcon={<></>} {...props}>
       {loading ? 'Loading...' : 'Login'}
     </LoadingButton>
   );
