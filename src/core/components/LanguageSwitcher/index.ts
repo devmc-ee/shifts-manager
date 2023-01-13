@@ -1,1 +1,1 @@
-export { LanguageSwitcherContainer as default } from './LanguageSwitcherContainer';
+export { LanguageSwitcherContainer as LanguageSwitcher } from './LanguageSwitcherContainer';

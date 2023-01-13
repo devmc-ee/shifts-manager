@@ -2,5 +2,12 @@
   "loginPage": {
     "submit": "Kinnita",
     "title": "[Ta-Rung]"
+  },
+  "core": {
+    "languages": {
+      "en": "English",
+      "et": "Eesti",
+      "th": "ไทย"
+    }
   }
 }
