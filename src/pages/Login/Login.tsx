@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { Page } from '../../core/components/Page';
 import { LoginForm } from '../../user/components/LoginForm';
-import './LoginPage.css';
 import { LanguageSwitcher } from '../../core/components/LanguageSwitcher';
+import './LoginPage.css';
 
 export const Login = () => {
   const { t } = useTranslation();
