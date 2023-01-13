@@ -23,11 +23,7 @@ const Template: ComponentStory<typeof LanguageSwitcher> = (args) => {
     onChange: handleLanguageChange,
   };
 
-  return (
-    <>
-      <LanguageSwitcher {...languageSwitcherProps} />
-    </>
-  );
+  return <LanguageSwitcher {...languageSwitcherProps} />;
 };
 
 export const Default = Template.bind({});
