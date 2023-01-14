@@ -8,7 +8,9 @@
   "private": true,
   "scripts": {
     "start": "webpack serve --config webpack/webpack.config.js --port 3000 --env env=dev",
-    "build": "yarn check-format && yarn lint && webpack --config webpack/webpack.config.js --env env=prod",
+    "build": "npm run format:check && npm run lint && webpack --config webpack/webpack.config.js --env env=prod stat=false",
+    "build:stat": "webpack --config webpack/webpack.config.js --env env=prod stat=true",
+    "build:report": "webpack --config webpack/webpack.config.js --env env=prod stat=true && webpack-bundle-analyzer build/stats.json",
     "lint": "eslint \"./src/**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "eslint \"./src/**/*.{js,jsx,ts,tsx}\" --fix",
     "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",

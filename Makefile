@@ -27,7 +27,7 @@ clear:
 	docker volume rm shifts-manager_node_modules
 
 build:
-	yarn build
+	npm run build
 
 i:
 	docker exec -it shifts-manager npm i
