@@ -46,7 +46,7 @@ export const LoginForm = ({ handleFieldValueChange, handleSubmit, isSubmitDisabl
         <div className="login-form__field-container login-form__field-container-password">
           <FormControl disabled={isLoading} error={!!errorMessage} fullWidth id="outlined-basic" variant="outlined" onChange={handleFieldValueChange}>
             <InputLabel disabled={isLoading} error={!!errorMessage} htmlFor="outlined-adornment-password">
-              Password -
+              Password
             </InputLabel>
             <OutlinedInput
               error={!!errorMessage}
