@@ -9,6 +9,7 @@
   "scripts": {
     "start": "webpack serve --config webpack/webpack.config.js --port 3000 --env env=dev",
     "build": "npm run format:check && npm run lint && webpack --config webpack/webpack.config.js --env env=prod stat=false",
+    "build:deploy": "webpack --config webpack/webpack.config.js --env env=prod stat=false",
     "build:prod": "webpack --config webpack/webpack.config.js --env env=prod stat=false",
     "build:stat": "webpack --config webpack/webpack.config.js --env env=prod stat=true",
     "build:report": "webpack --config webpack/webpack.config.js --env env=prod stat=true && webpack-bundle-analyzer build/stats.json",
