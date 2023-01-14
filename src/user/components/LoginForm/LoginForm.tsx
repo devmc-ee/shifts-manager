@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import { LoginButton } from '../LoginButton/LoginButton';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
@@ -13,12 +13,13 @@ import './LoginForm.css';
 export interface LoginFormProps {
   handleFieldValueChange: ({ target }: ChangeEvent<HTMLInputElement>) => void;
   handleSubmit: () => void;
+  handleKeyDown: (event: React.KeyboardEvent) => void;
   isSubmitDisabled: boolean;
   isLoading: boolean;
   errorMessage: string;
 }
 
-export const LoginForm = ({ handleFieldValueChange, handleSubmit, isSubmitDisabled, isLoading, errorMessage }: LoginFormProps): JSX.Element => {
+export const LoginForm = ({ handleFieldValueChange, handleSubmit, isSubmitDisabled, isLoading, errorMessage, handleKeyDown }: LoginFormProps): JSX.Element => {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -41,6 +42,7 @@ export const LoginForm = ({ handleFieldValueChange, handleSubmit, isSubmitDisabl
             type="text"
             name="userName"
             onChange={handleFieldValueChange}
+            onKeyDown={handleKeyDown}
           />
         </div>
         <div className="login-form__field-container login-form__field-container-password">
@@ -53,6 +55,7 @@ export const LoginForm = ({ handleFieldValueChange, handleSubmit, isSubmitDisabl
               id="outlined-adornment-password"
               type={showPassword ? 'text' : 'password'}
               name="password"
+              onKeyDown={handleKeyDown}
               endAdornment={
                 <InputAdornment position="end">
                   <IconButton

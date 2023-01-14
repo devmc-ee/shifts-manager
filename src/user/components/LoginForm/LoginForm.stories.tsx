@@ -14,6 +14,7 @@ const Template: ComponentStory<typeof LoginForm> = (args, global) => {
   const userName = useAppSelector(({ login }) => login.userName);
   const password = useAppSelector(({ login }) => login.password);
   const [isLoading, setIsLoading] = useState(false);
+  console.log(userName, password);
 
   const [isSubmitDisabled, setIsSubmitDisabled] = useState(!!args?.isSubmitDisabled);
   const [errorMessage, setErrorMessage] = useState(args?.errorMessage || '');
@@ -35,6 +36,12 @@ const Template: ComponentStory<typeof LoginForm> = (args, global) => {
     }, 5000);
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    if (isSubmitDisabled || errorMessage) return;
+    if (event.key !== 'Enter' && event.key !== 'NumpadEnter') return;
+    handleSubmit();
+  };
+
   useEffect(() => {
     setIsSubmitDisabled(() => !userName || !password);
 
@@ -42,7 +49,7 @@ const Template: ComponentStory<typeof LoginForm> = (args, global) => {
       setErrorMessage(() => '');
       setIsSubmitted(() => false);
     }
-  }, [userName, password]);
+  }, [userName, password, isSubmitted]);
 
   useEffect(() => {
     setIsLoading(() => global.initialArgs.isLoading || false);
@@ -56,6 +63,7 @@ const Template: ComponentStory<typeof LoginForm> = (args, global) => {
     isSubmitDisabled,
     handleChangeUserName: onUserNameChange,
     handleChangePassword: onPasswordChange,
+    handleKeyDown,
   };
 
   return <LoginForm {...loginFormProps} />;

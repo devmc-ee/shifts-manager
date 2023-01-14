@@ -12,7 +12,7 @@ export const loginSlice = createSlice({
   reducers: {
     LOGIN_FORM_FIELD_VALUE_CHANGED: (state, action) => {
       const { fieldName, value } = action.payload;
-
+      console.log(action.payload);
       state[fieldName as keyof LoginReducerState] = value;
     },
     LOGIN_FORM_CLEARED: (state) => {

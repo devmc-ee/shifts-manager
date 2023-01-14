@@ -26,9 +26,16 @@ export const useLoginForm = () => {
     await login({ email: userName, password });
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    if (isSubmitDisabled || error) return;
+    if (event.key !== 'Enter' && event.key !== 'NumpadEnter') return;
+    handleSubmit();
+  };
+
   const loginFormProps: LoginFormProps = {
     isSubmitDisabled,
     isLoading,
+    handleKeyDown,
     handleSubmit,
     handleFieldValueChange,
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
