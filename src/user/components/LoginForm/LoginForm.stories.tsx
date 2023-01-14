@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ChangeEvent, useEffect, useState } from 'react';
 import { LoginForm } from './LoginForm';
-import { changeUserName, changePassword, setIsLoading } from '../../redux/loginSlice';
+import { changeLoginFormFieldValue } from '../../redux/loginSlice';
 import { useAppDispatch, useAppSelector } from '../../../config/redux/hooks';
 
 export default {
@@ -9,28 +9,28 @@ export default {
   component: LoginForm,
 } as ComponentMeta<typeof LoginForm>;
 
-const Template: ComponentStory<typeof LoginForm> = (args) => {
+const Template: ComponentStory<typeof LoginForm> = (args, global) => {
   const dispatch = useAppDispatch();
   const userName = useAppSelector(({ login }) => login.userName);
   const password = useAppSelector(({ login }) => login.password);
-  const isLoading = useAppSelector(({ login }) => login.isLoading);
+  const [isLoading, setIsLoading] = useState(false);
 
   const [isSubmitDisabled, setIsSubmitDisabled] = useState(!!args?.isSubmitDisabled);
   const [errorMessage, setErrorMessage] = useState(args?.errorMessage || '');
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const onUserNameChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
-    dispatch(changeUserName(target.value));
+    dispatch(changeLoginFormFieldValue(target.value));
   };
   const onPasswordChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
-    dispatch(changePassword(target.value));
+    dispatch(changeLoginFormFieldValue(target.value));
   };
 
   const handleSubmit = () => {
-    dispatch(setIsLoading(true));
+    setIsLoading(true);
     setIsSubmitted(() => true);
     setTimeout(() => {
-      dispatch(setIsLoading(false));
+      setIsLoading(false);
       setErrorMessage(() => 'Something went wrong');
     }, 5000);
   };
@@ -44,6 +44,10 @@ const Template: ComponentStory<typeof LoginForm> = (args) => {
     }
   }, [userName, password]);
 
+  useEffect(() => {
+    setIsLoading(() => global.initialArgs.isLoading || false);
+  }, [global.initialArgs.isLoading]);
+
   const loginFormProps = {
     ...args,
     errorMessage,
@@ -54,11 +58,7 @@ const Template: ComponentStory<typeof LoginForm> = (args) => {
     handleChangePassword: onPasswordChange,
   };
 
-  return (
-    <>
-      <LoginForm {...loginFormProps} />
-    </>
-  );
+  return <LoginForm {...loginFormProps} />;
 };
 
 export const Default = Template.bind({});
