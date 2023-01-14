@@ -9,5 +9,11 @@
       "et": "Eesti",
       "th": "ไทย"
     }
+  },
+  "loginForm": {
+    "username": "Kastutajanimi",
+    "password": "Parool",
+    "login": "Sisene",
+    "loading": "Laadimine..."
   }
 }
