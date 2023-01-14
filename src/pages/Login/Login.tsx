@@ -6,6 +6,7 @@ import { AppState } from '../../config/redux/store';
 import { Page } from '../../core/components/Page';
 import { routes } from '../../core/routing/routes';
 import { LoginForm } from '../../user/components/LoginForm';
+import { LanguageSwitcher } from '../../core/components/LanguageSwitcher';
 import './LoginPage.css';
 
 export const Login = () => {
@@ -25,6 +26,7 @@ export const Login = () => {
     <Page classes="login">
       <div className="login-page__app-title">{title}</div>
       <div className="login-page__form-container">
+        <LanguageSwitcher />
         <LoginForm />
       </div>
     </Page>

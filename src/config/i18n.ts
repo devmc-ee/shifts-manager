@@ -8,6 +8,14 @@ import en from '../assets/translations/en.json';
 import et from '../assets/translations/et.json';
 import th from '../assets/translations/th.json';
 
+enum LANGUAGE {
+  EN = 'en',
+  ET = 'et',
+  TH = 'th',
+}
+
+export const languages: string[] = Object.values(LANGUAGE);
+
 i18n
   .use(Backend)
   .use(LanguageDetector)
