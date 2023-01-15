@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useState, KeyboardEvent } from 'react';
 import { LoginButton } from '../LoginButton/LoginButton';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
@@ -13,7 +13,7 @@ import './LoginForm.css';
 export interface LoginFormProps {
   handleFieldValueChange: ({ target }: ChangeEvent<HTMLInputElement>) => void;
   handleSubmit: () => void;
-  handleKeyDown: (event: React.KeyboardEvent) => void;
+  handleKeyDown: (event: KeyboardEvent) => void;
   isSubmitDisabled: boolean;
   isLoading: boolean;
   errorMessage: string;

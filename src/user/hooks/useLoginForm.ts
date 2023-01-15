@@ -1,4 +1,4 @@
-import { ChangeEvent, useMemo } from 'react';
+import { ChangeEvent, useMemo, KeyboardEvent } from 'react';
 import { changeLoginFormFieldValue } from '../redux/loginSlice';
 import { useAppDispatch, useAppSelector } from '../../config/redux/hooks';
 import { LoginFormProps } from '../components/LoginForm/LoginForm';
@@ -26,9 +26,11 @@ export const useLoginForm = () => {
     await login({ email: userName, password });
   };
 
-  const handleKeyDown = (event: React.KeyboardEvent) => {
-    if (isSubmitDisabled || error) return;
-    if (event.key !== 'Enter' && event.key !== 'NumpadEnter') return;
+  const handleKeyDown = (event: KeyboardEvent) => {
+    if (isSubmitDisabled || error || (event.key !== 'Enter' && event.key !== 'NumpadEnter')) {
+      return;
+    }
+
     handleSubmit();
   };
 

@@ -14,7 +14,6 @@ const Template: ComponentStory<typeof LoginForm> = (args, global) => {
   const userName = useAppSelector(({ login }) => login.userName);
   const password = useAppSelector(({ login }) => login.password);
   const [isLoading, setIsLoading] = useState(false);
-  console.log(userName, password);
 
   const [isSubmitDisabled, setIsSubmitDisabled] = useState(!!args?.isSubmitDisabled);
   const [errorMessage, setErrorMessage] = useState(args?.errorMessage || '');
