@@ -1,4 +1,4 @@
-import { ChangeEvent, useState, KeyboardEvent } from 'react';
+import { ChangeEvent, useLayoutEffect, useState, useRef } from 'react';
 import { LoginButton } from '../LoginButton/LoginButton';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
@@ -30,11 +30,24 @@ export const LoginForm = ({ handleFieldValueChange, handleSubmit, isSubmitDisabl
     event.preventDefault();
   };
 
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useLayoutEffect(() => {
+    inputRef.current?.focus();
+  }, []);
+
+  useLayoutEffect(() => {
+    if (errorMessage) {
+      inputRef.current?.focus();
+    }
+  }, [errorMessage]);
+
   return (
     <form className="login-form">
       <div className="login-form-container login-form-input">
         <div className="login-form__field-container login-form__field-container-username">
           <TextField
+            inputRef={inputRef}
             error={!!errorMessage}
             disabled={isLoading}
             fullWidth
