@@ -56,6 +56,7 @@ export const LoginForm = ({ handleFieldValueChange, handleSubmit, isSubmitDisabl
               endAdornment={
                 <InputAdornment position="end">
                   <IconButton
+                    tabIndex={-1}
                     disabled={isLoading}
                     aria-label="toggle password visibility"
                     onClick={handleClickShowPassword}
