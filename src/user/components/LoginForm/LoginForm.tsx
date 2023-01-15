@@ -42,7 +42,6 @@ export const LoginForm = ({ handleFieldValueChange, handleSubmit, isSubmitDisabl
             type="text"
             name="userName"
             onChange={handleFieldValueChange}
-            onKeyDown={handleKeyDown}
           />
         </div>
         <div className="login-form__field-container login-form__field-container-password">
