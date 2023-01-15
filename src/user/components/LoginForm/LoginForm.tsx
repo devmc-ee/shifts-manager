@@ -33,6 +33,10 @@ export const LoginForm = ({ handleFieldValueChange, handleSubmit, isSubmitDisabl
     inputRef.current?.focus();
   }, []);
 
+  useLayoutEffect(() => {
+    inputRef.current?.focus();
+  }, [errorMessage]);
+
   return (
     <form className="login-form">
       <div className="login-form-container login-form-input">
