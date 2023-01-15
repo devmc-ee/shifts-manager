@@ -35,6 +35,12 @@ const Template: ComponentStory<typeof LoginForm> = (args, global) => {
     }, 5000);
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    if (isSubmitDisabled || errorMessage) return;
+    if (event.key !== 'Enter' && event.key !== 'NumpadEnter') return;
+    handleSubmit();
+  };
+
   useEffect(() => {
     setIsSubmitDisabled(() => !userName || !password);
 
@@ -42,7 +48,7 @@ const Template: ComponentStory<typeof LoginForm> = (args, global) => {
       setErrorMessage(() => '');
       setIsSubmitted(() => false);
     }
-  }, [userName, password]);
+  }, [userName, password, isSubmitted]);
 
   useEffect(() => {
     setIsLoading(() => global.initialArgs.isLoading || false);
@@ -56,6 +62,7 @@ const Template: ComponentStory<typeof LoginForm> = (args, global) => {
     isSubmitDisabled,
     handleChangeUserName: onUserNameChange,
     handleChangePassword: onPasswordChange,
+    handleKeyDown,
   };
 
   return <LoginForm {...loginFormProps} />;

@@ -8,18 +8,21 @@ import OutlinedInput from '@mui/material/OutlinedInput/OutlinedInput';
 import IconButton from '@mui/material/IconButton/IconButton';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import { useTranslation } from 'react-i18next';
 import './LoginForm.css';
 
 export interface LoginFormProps {
   handleFieldValueChange: ({ target }: ChangeEvent<HTMLInputElement>) => void;
   handleSubmit: () => void;
+  handleKeyDown: (event: KeyboardEvent) => void;
   isSubmitDisabled: boolean;
   isLoading: boolean;
   errorMessage: string;
 }
 
-export const LoginForm = ({ handleFieldValueChange, handleSubmit, isSubmitDisabled, isLoading, errorMessage }: LoginFormProps): JSX.Element => {
+export const LoginForm = ({ handleFieldValueChange, handleSubmit, isSubmitDisabled, isLoading, errorMessage, handleKeyDown }: LoginFormProps): JSX.Element => {
   const [showPassword, setShowPassword] = useState(false);
+  const { t } = useTranslation();
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -49,7 +52,7 @@ export const LoginForm = ({ handleFieldValueChange, handleSubmit, isSubmitDisabl
             disabled={isLoading}
             fullWidth
             id="outlined-basic"
-            label="Username"
+            label={t('loginForm.username')}
             variant="outlined"
             type="text"
             name="userName"
@@ -59,16 +62,18 @@ export const LoginForm = ({ handleFieldValueChange, handleSubmit, isSubmitDisabl
         <div className="login-form__field-container login-form__field-container-password">
           <FormControl disabled={isLoading} error={!!errorMessage} fullWidth id="outlined-basic" variant="outlined" onChange={handleFieldValueChange}>
             <InputLabel disabled={isLoading} error={!!errorMessage} htmlFor="outlined-adornment-password">
-              Password
+              {t('loginForm.password')}
             </InputLabel>
             <OutlinedInput
               error={!!errorMessage}
               id="outlined-adornment-password"
               type={showPassword ? 'text' : 'password'}
               name="password"
+              onKeyDown={handleKeyDown}
               endAdornment={
                 <InputAdornment position="end">
                   <IconButton
+                    tabIndex={-1}
                     disabled={isLoading}
                     aria-label="toggle password visibility"
                     onClick={handleClickShowPassword}
