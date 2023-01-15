@@ -34,9 +34,9 @@ export const LoginForm = ({ handleFieldValueChange, handleSubmit, isSubmitDisabl
   }, []);
 
   useLayoutEffect(() => {
-    if (!errorMessage) return;
-
-    inputRef.current?.focus();
+    if (errorMessage) {
+      inputRef.current?.focus();
+    }
   }, [errorMessage]);
 
   return (
