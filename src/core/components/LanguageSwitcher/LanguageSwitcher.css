@@ -1,4 +1,4 @@
-.MuiSelect-nativeInput {
+MuiSelect-nativeInput {
   height: 2rem;
 }
 
@@ -13,7 +13,7 @@
   padding-right: 0;
 }
 
-.MuiSelect-select.MuiInputBase-input.MuiInput-input:hover {
+.MuiSelect-select.MuiInputBase-input.MuiInput-input.Mui-hover {
   color: var(--primary-color-dark);
   font-weight: 500;
 }

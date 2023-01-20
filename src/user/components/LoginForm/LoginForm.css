@@ -18,12 +18,6 @@
   align-content: space-around;
 }
 
-.login-form-alert-box {
-  position: absolute;
-  width: 100%;
-  max-width: 32rem;
-}
-
 .MuiPaper-root.MuiAlert-root {
   box-sizing: border-box;
   position: relative;
@@ -52,21 +46,27 @@
 .login-form__login-btn-container {
   display: flex;
   text-align: center;
-  margin-top: 4rem;
 }
 
-.MuiOutlinedInput-root.Mui-focused {
-  background-color: var(--primary-dark);
-}
-
-.MuiFormLabel-root.MuiInputLabel-shrink {
+.MuiInputLabel-root.Mui-focused {
   color: var(--primary-dark);
   font-weight: bold;
   padding: 0;
 }
 
-.MuiInputLabel-root.Mui-focused {
+.MuiInputBase-root.MuiOutlinedInput-root fieldset legend span,
+.Mui-focused fieldset legend span {
+  font-weight: bold;
+}
+
+.MuiInputBase-root.MuiOutlinedInput-root.Mui-focused + .MuiFormLabel-root.MuiInputLabel-root {
   color: var(--primary-dark);
+  font-weight: bold;
+  padding: 0;
+}
+
+.MuiInputBase-root.MuiOutlinedInput-root.Mui-focused + .MuiFormLabel-root.MuiInputLabel-root.Mui-error {
+  color: #d32f2f;
   font-weight: bold;
   padding: 0;
 }

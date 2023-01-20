@@ -1,0 +1,9 @@
+.page {
+  position: fixed;
+  overflow: auto;
+  width: 100%;
+  top: env(safe-area-inset-top);
+  bottom: env(safe-area-inset-bottom);
+  left: env(safe-area-inset-left);
+  right: env(safe-area-inset-right);
+}
