@@ -54,7 +54,7 @@ export const LoginForm = ({ handleFieldValueChange, handleSubmit, isSubmitDisabl
             id="outlined-basic"
             label={t('loginForm.username')}
             variant="outlined"
-            type="text"
+            type="email"
             name="userName"
             onChange={handleFieldValueChange}
           />
