@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import { NavMenu } from './NavMenu';
+import { NavMenu } from '../NavMenu';
 import './RootNavLayout.css';
 
 export const RootNavLayout = (): JSX.Element => {

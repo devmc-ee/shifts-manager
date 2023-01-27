@@ -1,8 +1,8 @@
 import { Link, useLocation } from 'react-router-dom';
-import { useAppDispatch } from '../../config/redux/hooks';
-import { clearUserData } from '../../user/redux/userSlice';
-import { routes } from '../routing/routes';
-import { CustomButton } from '../components/buttons/Button/Button';
+import { useAppDispatch } from '../../../config/redux/hooks';
+import { clearUserData } from '../../../user/redux/userSlice';
+import { routes } from '../../routing/routes';
+import { CustomButton } from '../../components/buttons/Button/Button';
 import HomeIcon from '@mui/icons-material/Home';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import LogoutIcon from '@mui/icons-material/Logout';
