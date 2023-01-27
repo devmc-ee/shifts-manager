@@ -1,0 +1,12 @@
+.icon-button--selected path,
+g {
+  fill: var(--secondary-color);
+  stroke: var(--secondary-color);
+}
+
+.icon-button--inactive svg,
+path,
+g {
+  fill: var(--primary-color-contrast-text);
+  stroke: var(--primary-color-contrast-text);
+}
