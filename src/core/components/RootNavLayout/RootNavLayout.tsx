@@ -9,7 +9,9 @@ export const RootNavLayout = (): JSX.Element => {
       <div className="root-content-container">
         <Outlet />
       </div>
-      <NavMenu />
+      <div className="root-layout-footer">
+        <NavMenu />
+      </div>
     </div>
   );
 };
