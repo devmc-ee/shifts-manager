@@ -10,15 +10,19 @@ export default {
 } as ComponentMeta<typeof CustomIconButton>;
 
 const Template: ComponentStory<typeof CustomIconButton> = (args) => {
-  const [selected, setSelected] = useState(false);
+  const [styleVariant, setStyleVariant] = useState<'primary' | 'secondary' | undefined>(args.variant);
+
+  const validVariants = ['primary', 'secondary'];
+  const defaultVariant = 'primary';
+
+  args.variant = validVariants.includes(`${styleVariant}`) ? styleVariant : defaultVariant;
 
   const handleColorChange = () => {
-    setSelected(() => true);
+    setStyleVariant('secondary');
   };
 
   const CustomIconButtonProps = {
     ...args,
-    isSelected: selected,
     handleClick: handleColorChange,
   };
 
