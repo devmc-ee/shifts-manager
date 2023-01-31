@@ -1,0 +1,53 @@
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100vw;
+}
+
+.nav-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  min-height: 4.19rem;
+  background-color: var(--primary-color-light);
+}
+
+.nav-list li,
+a {
+  display: flex;
+  width: max-content;
+  flex-wrap: wrap;
+  min-width: calc(100vw / 4);
+  min-height: 4.19rem;
+}
+
+.nav-list .MuiSvgIcon-root {
+  min-height: 2rem;
+  min-width: 2rem;
+}
+
+.nav-list .MuiButtonBase-root.MuiButton-root {
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7em;
+  text-align: end;
+  min-width: calc(100vw / 4);
+  min-height: 4.19rem;
+  padding: 0;
+}
+
+.nav-list .MuiButtonBase-root span {
+  margin: 0;
+}
+
+.nav-list a {
+  text-decoration: none;
+}
