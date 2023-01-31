@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { useState } from 'react';
 import { BurgerMenuIcon } from '../../../assets/icons/BurgerMenuIcon';
 import { ProfileIcon } from '../../../assets/icons/ProfileIcon';
-import { CustomIconButton } from './IconButton';
+import { CustomIconButton, styleVariant } from './IconButton';
 
 export default {
   title: 'CustomIconButton',
@@ -10,19 +10,15 @@ export default {
 } as ComponentMeta<typeof CustomIconButton>;
 
 const Template: ComponentStory<typeof CustomIconButton> = (args) => {
-  const [styleVariant, setStyleVariant] = useState<'primary' | 'secondary' | undefined>(args.variant);
-
-  const validVariants = ['primary', 'secondary'];
-  const defaultVariant = 'primary';
-
-  args.variant = validVariants.includes(`${styleVariant}`) ? styleVariant : defaultVariant;
+  const [style, setStyle] = useState<styleVariant.primary | styleVariant.secondary | undefined>(styleVariant.primary);
 
   const handleColorChange = () => {
-    setStyleVariant('secondary');
+    setStyle(styleVariant.secondary);
   };
 
   const CustomIconButtonProps = {
     ...args,
+    variant: style,
     handleClick: handleColorChange,
   };
 
