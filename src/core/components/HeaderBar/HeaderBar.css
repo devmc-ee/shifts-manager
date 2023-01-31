@@ -8,7 +8,7 @@
   padding-right: 1rem;
 }
 
-.header-company-name {
+.header-title {
   display: flex;
   color: var(--secondary-color);
   font-weight: 700;

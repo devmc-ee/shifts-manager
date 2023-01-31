@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { HEADER_BUTTON_ID } from '../components/HeaderBarMenu/HeaderBarMenu';
+import { HEADER_BUTTON_ID } from '../components/HeaderBar/HeaderBar';
 import { CoreReducerState } from '../types/CoreReducerState.d';
 
 const initialState: CoreReducerState = {

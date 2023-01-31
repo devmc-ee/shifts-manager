@@ -1,12 +1,16 @@
 .icon-button--secondary path,
-g {
+g,
+.icon-button-label {
   fill: var(--secondary-color);
   stroke: var(--secondary-color);
+  color: var(--secondary-color);
 }
 
 .icon-button--primary svg,
 path,
-g {
+g,
+.icon-button-label {
   fill: var(--primary-color-contrast-text);
   stroke: var(--primary-color-contrast-text);
+  color: var(--primary-color-contrast-text);
 }
