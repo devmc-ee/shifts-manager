@@ -1,4 +1,4 @@
-import { ChangeEvent, useLayoutEffect, useState, useRef } from 'react';
+import { ChangeEvent, useLayoutEffect, useState, useRef, KeyboardEvent } from 'react';
 import { LoginButton } from '../LoginButton/LoginButton';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
@@ -54,16 +54,13 @@ export const LoginForm = ({ handleFieldValueChange, handleSubmit, isSubmitDisabl
             id="outlined-basic"
             label={t('loginForm.username')}
             variant="outlined"
-            type="text"
+            type="email"
             name="userName"
             onChange={handleFieldValueChange}
           />
         </div>
         <div className="login-form__field-container login-form__field-container-password">
           <FormControl disabled={isLoading} error={!!errorMessage} fullWidth id="outlined-basic" variant="outlined" onChange={handleFieldValueChange}>
-            <InputLabel disabled={isLoading} error={!!errorMessage} htmlFor="outlined-adornment-password">
-              {t('loginForm.password')}
-            </InputLabel>
             <OutlinedInput
               error={!!errorMessage}
               id="outlined-adornment-password"
@@ -84,8 +81,11 @@ export const LoginForm = ({ handleFieldValueChange, handleSubmit, isSubmitDisabl
                   </IconButton>
                 </InputAdornment>
               }
-              label="Password"
+              label={t('loginForm.password')}
             />
+            <InputLabel disabled={isLoading} error={!!errorMessage} htmlFor="outlined-adornment-password">
+              {t('loginForm.password')}
+            </InputLabel>
           </FormControl>
         </div>
       </div>
