@@ -1,22 +1,21 @@
-import IconButton from '@mui/material/IconButton';
+import IconButton from '@mui/material/IconButton/IconButton';
+import classnames from 'classnames';
 import { MouseEvent } from 'react';
+import { COLOR_VARIANTS } from '../../types/ColorVariants';
 import './IconButton.css';
 
-export enum styleVariant {
-  primary = 'primary',
-  secondary = 'secondary',
-}
-interface CustomIconButtonProps {
+interface IconButtonProps {
   icon: JSX.Element;
   label?: string;
-  variant?: styleVariant.primary | styleVariant.secondary | undefined;
+  variant?: COLOR_VARIANTS.primary | COLOR_VARIANTS.secondary | undefined;
   handleClick: (event: MouseEvent<HTMLButtonElement>) => void;
+  classNames?: string | string[] | undefined;
 }
 
-export const CustomIconButton = ({ icon, label, variant, handleClick }: CustomIconButtonProps) => {
+export const IconButtonWithLabel = ({ icon, label, variant, handleClick }: IconButtonProps) => {
   return (
     <>
-      <IconButton onClick={handleClick} className={(variant && `icon-button icon-button--${variant}`) || `icon-button`}>
+      <IconButton onClick={handleClick} className={classnames('icon-button', { [`icon-button--${variant}`]: !!variant })}>
         {icon}
       </IconButton>
       {label && <span className="icon-button-label">{label}</span>}

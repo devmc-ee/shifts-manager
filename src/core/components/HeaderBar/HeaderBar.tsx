@@ -4,12 +4,13 @@ import { BurgerMenuIcon } from '../../../assets/icons/BurgerMenuIcon';
 import { ProfileIcon } from '../../../assets/icons/ProfileIcon';
 import { useAppDispatch } from '../../../config/redux/hooks';
 import { callHeaderBlockButtonClicked } from '../../redux/coreSlice';
+import { COLOR_VARIANTS } from '../../types/ColorVariants';
 
 interface HeaderBarProps {
   title: string;
 }
 
-export enum HEADER_BUTTON_ID {
+export const enum HEADER_BUTTON_ID {
   burgerMenuButton = 'burger-menu-button',
   profileMenuButton = 'profile-menu-button',
 }
@@ -22,10 +23,10 @@ export const HeaderBar = ({ title }: HeaderBarProps) => {
   };
 
   return (
-    <div className="root-header-menu">
-      <IconButton handleClick={handleButtonClick(HEADER_BUTTON_ID.burgerMenuButton)} icon={<BurgerMenuIcon />} />
+    <div className="header-bar">
+      <IconButton handleClick={handleButtonClick(HEADER_BUTTON_ID.burgerMenuButton)} variant={COLOR_VARIANTS.primary} icon={<BurgerMenuIcon />} />
       <div className="header-title">{title}</div>
-      <IconButton handleClick={handleButtonClick(HEADER_BUTTON_ID.profileMenuButton)} icon={<ProfileIcon />} />
+      <IconButton handleClick={handleButtonClick(HEADER_BUTTON_ID.profileMenuButton)} variant={COLOR_VARIANTS.primary} icon={<ProfileIcon />} />
     </div>
   );
 };
