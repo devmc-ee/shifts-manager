@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { LoginButton } from './LoginButton';
 
 export default {
-  title: 'LoginButton',
+  title: 'LoginForm/LoginButton',
   component: LoginButton,
 } as ComponentMeta<typeof LoginButton>;
 

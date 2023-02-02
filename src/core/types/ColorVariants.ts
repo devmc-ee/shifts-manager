@@ -1,4 +1,6 @@
 export const enum COLOR_VARIANTS {
-  primary = 'primary',
-  secondary = 'secondary',
+  PRIMARY = 'primary',
+  PRIMARY_CONTRAST = 'primary-contrast',
+  SECONDARY = 'secondary',
+  SECONDARY_CONTRAST = 'secondary-contrast',
 }

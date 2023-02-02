@@ -7,11 +7,13 @@
   --primary-color-light: #484848;
   --primary-color-dark: #000000;
   --primary-color-contrast-text: #ffffff;
+  --primary-color-contrast: #ffffff;
 
   --secondary-color: #fdeb01;
   --secondary-color-light: #ffff56;
   --secondary-color-dark: #c6b900;
   --secondary-color-contrast-text: #000000;
+  --secondary-color-contrast: #000000;
 }
 
 /* example  */
