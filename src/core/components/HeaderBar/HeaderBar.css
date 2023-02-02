@@ -1,0 +1,17 @@
+.header-bar {
+  display: flex;
+  min-height: 3.75rem;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--primary-color);
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.header-title {
+  display: flex;
+  color: var(--secondary-color);
+  font-weight: 700;
+  justify-content: center;
+  width: 100%;
+}

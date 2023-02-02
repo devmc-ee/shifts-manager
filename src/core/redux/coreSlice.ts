@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { HEADER_BUTTON_ID } from '../components/HeaderBar/HeaderBar';
 import { CoreReducerState } from '../types/CoreReducerState.d';
 
 const initialState: CoreReducerState = {
@@ -16,6 +17,11 @@ export const coreSlice = createSlice({
       state.notifications = [];
     },
   },
+});
+
+export const callHeaderBlockButtonClicked = (buttonID: HEADER_BUTTON_ID) => ({
+  type: 'coreSlice/HEADER_BLOCK_BUTTON_CLICKED',
+  payload: buttonID,
 });
 
 export const { NOTIFICATION_ADDED: addNotification, NOTIFICATIONS_CLEARED: clearNotifications } = coreSlice.actions;
