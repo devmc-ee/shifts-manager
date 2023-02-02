@@ -1,33 +1,27 @@
 import './button.css';
-import MUButton from '@mui/material/Button';
+import Button from '@mui/material/Button';
+import { ReactNode, MouseEvent } from 'react';
+import { theme } from '../../../../config/theme';
 
 interface ButtonProps {
-  /**
-   * Is this the principal call to action on the page?
-   */
   color?: 'primary' | 'secondary';
-  /**
-   * What background color to use
-   */
   backgroundColor?: string;
-  /**
-   * How large should the button be?
-   */
   size?: 'small' | 'medium' | 'large';
-  /**
-   * Button contents
-   */
   label: string;
-  /**
-   * Optional click handler
-   */
+  id: string;
   onClick?: () => void;
   disabled?: boolean;
+  children?: ReactNode;
+  icon?: ReactNode;
+  className?: string;
+  active: boolean;
+  handleClick: (event: MouseEvent<HTMLButtonElement>) => void;
 }
 
-/**
- * Primary UI component for user interaction
- */
-export const Button = ({ label, ...props }: ButtonProps) => {
-  return <MUButton {...props}>{label}</MUButton>;
+export const CustomButton = ({ label, icon, handleClick, active, ...props }: ButtonProps) => {
+  return (
+    <Button onClick={handleClick} sx={{ color: active ? theme.palette.secondary.light : theme.palette.primary.contrastText }} startIcon={icon} {...props}>
+      {label}
+    </Button>
+  );
 };
