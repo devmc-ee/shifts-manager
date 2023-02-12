@@ -2,10 +2,10 @@ import { isRejectedWithValue, Middleware, MiddlewareAPI } from '@reduxjs/toolkit
 import { NotificationLevelType } from '../types/notifications.d';
 import { addNotification, clearNotifications } from './coreSlice';
 
-export const apiErrorsMiddleware: Middleware =
-  ({ dispatch }: MiddlewareAPI) =>
-  (next) =>
-  (action) => {
+export const apiErrorsMiddleware: Middleware = ({ dispatch }: MiddlewareAPI) => {
+  //
+  return (next) => (action) => {
+    // ---- changes logic
     if (isRejectedWithValue(action)) {
       dispatch(
         addNotification({
@@ -26,3 +26,4 @@ export const apiErrorsMiddleware: Middleware =
 
     return next(action);
   };
+};

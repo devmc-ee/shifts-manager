@@ -21,7 +21,6 @@
   color: var(--primary-color);
 }
 
-.font-bold {
+.font-bold-600 {
   font-weight: 600;
-  color: var(--secondary-color);
 }

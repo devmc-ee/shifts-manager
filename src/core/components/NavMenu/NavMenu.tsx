@@ -13,7 +13,6 @@ import './NavMenu.css';
 export const NavMenu = (): JSX.Element => {
   const { pathname } = useLocation();
   const dispatch = useAppDispatch();
-
   const getActiveRouteClass = (route: string) => {
     const activeRouteClassName = 'font-bold';
 
