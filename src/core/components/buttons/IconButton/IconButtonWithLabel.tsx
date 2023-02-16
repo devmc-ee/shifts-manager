@@ -1,13 +1,15 @@
 import IconButton from '@mui/material/IconButton/IconButton';
 import classnames from 'classnames';
 import { MouseEvent } from 'react';
+import { theme } from '../../../../config/theme';
 import { COLOR_VARIANTS } from '../../../types/ColorVariants';
 import { getPostfixedClassNamesArray } from '../../../utils/addPostfixToClasses';
 import './IconButtonWithLabel.css';
 
 interface IconButtonProps {
   icon: JSX.Element;
-  handleClick: (event: MouseEvent<HTMLButtonElement>) => void;
+  handleClick?: (event: MouseEvent<HTMLButtonElement>) => void;
+  id?: string;
   label?: string;
   variant?: COLOR_VARIANTS;
   customClasses?: string;
@@ -24,10 +26,14 @@ export const IconButtonWithLabel = ({ icon, label, variant, customClasses = '', 
 
   return (
     <>
-      <IconButton onClick={handleClick} className={iconButtonClasses}>
+      <IconButton
+        onClick={handleClick}
+        className={iconButtonClasses}
+        sx={{ color: variant === 'secondary' ? `${theme.palette.secondary.light}` : `${theme.palette.primary.contrastText}` }}
+      >
         {icon}
+        {label && <span className={labelClasses}>{label}</span>}
       </IconButton>
-      {label && <span className={labelClasses}>{label}</span>}
     </>
   );
 };

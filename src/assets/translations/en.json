@@ -8,6 +8,12 @@
       "en": "English",
       "et": "Eesti",
       "th": "ไทย"
+    },
+    "navMenu": {
+      "home": "Home",
+      "shifts": "Shifts",
+      "timesheets": "Timesheets",
+      "team": "Team"
     }
   },
   "loginForm": {

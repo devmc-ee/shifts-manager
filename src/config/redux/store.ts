@@ -6,7 +6,7 @@ import storage from 'redux-persist/lib/storage';
 
 import { persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist';
 
-import { staffReducer } from '../../staff/redux/staffSlice';
+import { teamReducer } from '../../team/redux/teamSlice';
 import { apiBase } from './apiBase';
 import { apiErrorsMiddleware } from '../../core/redux/apiErrorNotificationsMiddleware';
 import { userMiddleware } from '../../user/redux/userMiddleware';
@@ -19,7 +19,7 @@ const rootReducer = combineReducers({
   core: coreReducer,
   user: userReducer,
   login: loginReducer,
-  staff: staffReducer,
+  team: teamReducer,
   // api endpoints
   [apiBase.reducerPath]: apiBase.reducer,
 });

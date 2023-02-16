@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAppSelector } from '../../config/redux/hooks';
 import { AppState } from '../../config/redux/store';
 import { Page } from '../../core/components/Page';
-import { routes } from '../../core/routing/routes';
+import { ProtectedRoutesEnum } from '../../config/routes/routes';
 import { LoginForm } from '../../user/components/LoginForm';
 import { LanguageSwitcher } from '../../core/components/LanguageSwitcher';
 import './LoginPage.css';
@@ -18,7 +18,7 @@ export const Login = () => {
 
   useEffect(() => {
     if (isLoggedIn) {
-      navigate(routes.protected.root);
+      navigate(ProtectedRoutesEnum.root);
     }
   }, [isLoggedIn]);
 
