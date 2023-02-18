@@ -2,8 +2,7 @@ import { ChangeEvent, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAppDispatch } from '../../config/redux/hooks';
 import { ProtectedRoutesEnum } from '../../config/routes/routes';
-// eslint-disable-next-line import/no-unresolved
-import { Team } from '../redux/TeamReducerState';
+import { Team } from '../redux/TeamReducerState.d';
 import { createTeam } from '../redux/teamSlice';
 
 export const NewTeamContainer = (): JSX.Element => {

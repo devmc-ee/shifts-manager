@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-// eslint-disable-next-line import/no-unresolved
-import { TeamReducerState } from './TeamReducerState';
+import { TeamReducerState } from './TeamReducerState.d';
 import { v4 as uuidv4 } from 'uuid';
 const initialState: TeamReducerState = {
   team: null,
