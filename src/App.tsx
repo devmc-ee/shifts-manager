@@ -6,7 +6,7 @@ import { PublicRoutesEnum, ProtectedRoutesEnum } from './config/routes/routes';
 import { NewTeamPage, TeamPage } from './team/components';
 import { RootNavLayout } from './core/components/RootNavLayout';
 import { ShiftsPage, NewShiftPage } from './shift/components';
-import { useUrlObserver } from './config/redux/hooks';
+import { useUrlObserver } from '../src/core/hooks/useUrlObserver';
 import { TimeSheetsPage } from './timeSheet/TimeSheetsPage';
 
 export const App = () => {

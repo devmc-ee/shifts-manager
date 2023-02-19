@@ -8,17 +8,17 @@ import './NavMenu.css';
 
 interface NavMenuProps {
   activeRoute: string;
-  icons: unknown;
+  icons: { [name: string]: () => JSX.Element };
   onClick?: (url: string) => void;
 }
 
 export const NavMenu = ({ activeRoute, icons, onClick }: NavMenuProps): JSX.Element => {
   const { t } = useTranslation();
 
-  const getIcon = (iconName: unknown): JSX.Element => {
+  const getIcon = (iconName: string): JSX.Element => {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     //@ts-ignore icons type
-    return !!icons[iconName as keyof typeof icons] ? icons[iconName as keyof typeof icons]() : <HomeIcon />;
+    return !!icons[iconName] ? icons[iconName]() : <HomeIcon />;
   };
 
   const handleClick = (url: string) => () => {

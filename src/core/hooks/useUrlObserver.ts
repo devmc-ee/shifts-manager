@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { changeActiveRoute } from '../../core/redux/coreSlice';
-import { useAppDispatch } from '../redux/hooks';
+import { changeActiveRoute } from '../redux/coreSlice';
+import { useAppDispatch } from '../../config/redux/hooks';
 
 export const useUrlObserver = () => {
   const dispatch = useAppDispatch();
