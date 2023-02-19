@@ -8,6 +8,12 @@
       "en": "English",
       "et": "Eesti",
       "th": "ไทย"
+    },
+    "navMenu": {
+      "home": "Kodu",
+      "shifts": "Töögraafik",
+      "timesheets": "Ajatabel",
+      "team": "Meeskond"
     }
   },
   "loginForm": {

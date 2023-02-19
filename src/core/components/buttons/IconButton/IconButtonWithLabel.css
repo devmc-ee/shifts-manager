@@ -1,12 +1,10 @@
 .icon-button--primary-contrast svg {
   fill: var(--primary-color-contrast);
-  stroke: var(--primary-color-contrast);
   color: var(--primary-color-contrast);
 }
 
 .icon-button--secondary svg {
   fill: var(--secondary-color);
-  stroke: var(--secondary-color);
   color: var(--secondary-color);
 }
 
@@ -16,6 +14,21 @@
   color: var(--secondary-color-contrast);
 }
 
-.test-class__icon-button-label {
-  color: red;
+.icon-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.icon-button-label {
+  font-size: 0.63rem;
+  padding: 0.25rem;
+}
+
+.icon-button-label--primary-contrast {
+  color: var(--primary-color-contrast);
+}
+
+.icon-button-label--secondary {
+  color: var(--secondary-color);
 }

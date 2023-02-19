@@ -1,5 +1,4 @@
-.page {
-  position: fixed;
+.page-content {
   overflow: auto;
   width: 100%;
   top: env(safe-area-inset-top);
