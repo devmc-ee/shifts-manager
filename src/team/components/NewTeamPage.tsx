@@ -1,10 +1,10 @@
-import { Page } from '../../core/components/Page';
+import { PageContent } from '../../core/components/PageContent';
 import { NewTeamContainer } from './NewTeamContainer';
 
 export const NewTeamPage = () => {
   return (
-    <Page classes="new-team-page">
+    <PageContent classes="new-team-page">
       <NewTeamContainer />
-    </Page>
+    </PageContent>
   );
 };

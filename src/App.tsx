@@ -4,7 +4,7 @@ import { Dashboard, Login } from './pages';
 import { ProtectedRoute } from './core/components/ProtectedRoute';
 import { PublicRoutesEnum, ProtectedRoutesEnum } from './config/routes/routes';
 import { NewTeamPage, TeamPage } from './team/components';
-import { RootNavLayout } from './core/components/RootNavLayout';
+import { RootNavLayout } from './core/components/ProtectedPageLayout';
 import { ShiftsPage, NewShiftPage } from './shift/components';
 import { useUrlObserver } from '../src/core/hooks/useUrlObserver';
 import { TimeSheetsPage } from './timeSheet/TimeSheetsPage';

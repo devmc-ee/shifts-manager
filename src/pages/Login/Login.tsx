@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { useAppSelector } from '../../config/redux/hooks';
 import { AppState } from '../../config/redux/store';
-import { Page } from '../../core/components/Page';
+import { PageContent } from '../../core/components/PageContent';
 import { ProtectedRoutesEnum } from '../../config/routes/routes';
 import { LoginForm } from '../../user/components/LoginForm';
 import { LanguageSwitcher } from '../../core/components/LanguageSwitcher';
@@ -23,12 +23,12 @@ export const Login = () => {
   }, [isLoggedIn]);
 
   return (
-    <Page classes="login">
+    <PageContent classes="login">
       <div className="login-page__app-title">{title}</div>
       <div className="login-page__form-container">
         <LanguageSwitcher />
         <LoginForm />
       </div>
-    </Page>
+    </PageContent>
   );
 };
