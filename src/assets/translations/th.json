@@ -8,6 +8,12 @@
       "en": "English",
       "et": "Eesti",
       "th": "ไทย"
+    },
+    "navMenu": {
+      "home": "บ้าน",
+      "shifts": "เทอกราฟาฟิก",
+      "timesheets": "แผ่นเวลา",
+      "team": "บุคลากร"
     }
   },
   "loginForm": {

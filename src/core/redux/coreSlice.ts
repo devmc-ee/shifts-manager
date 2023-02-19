@@ -1,9 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { HEADER_BUTTON_ID } from '../components/HeaderBar/HeaderBar';
 import { CoreReducerState } from '../types/CoreReducerState.d';
+import { ProtectedRoutesEnum } from '../../config/routes/routes';
 
 const initialState: CoreReducerState = {
   notifications: [],
+  activeRoute: ProtectedRoutesEnum.dashboard,
 };
 
 export const coreSlice = createSlice({
@@ -16,6 +18,9 @@ export const coreSlice = createSlice({
     NOTIFICATIONS_CLEARED: (state) => {
       state.notifications = [];
     },
+    ACTIVE_ROUTE_CHANGED: (state, action) => {
+      state.activeRoute = action.payload;
+    },
   },
 });
 
@@ -24,6 +29,6 @@ export const callHeaderBlockButtonClicked = (buttonID: HEADER_BUTTON_ID) => ({
   payload: buttonID,
 });
 
-export const { NOTIFICATION_ADDED: addNotification, NOTIFICATIONS_CLEARED: clearNotifications } = coreSlice.actions;
+export const { NOTIFICATION_ADDED: addNotification, NOTIFICATIONS_CLEARED: clearNotifications, ACTIVE_ROUTE_CHANGED: changeActiveRoute } = coreSlice.actions;
 
 export const coreReducer = coreSlice.reducer;

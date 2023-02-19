@@ -1,8 +1,7 @@
-.root-layout-container {
+.protected-page-layout {
   position: fixed;
   overflow: auto;
   width: 100%;
-  display: grid;
   grid-template-rows: 3.75rem 1fr 4.19rem;
   top: 0;
   bottom: 0;
@@ -10,10 +9,9 @@
   left: 0;
 }
 
-.root-layout-header {
+.protected-page-layout__header {
   position: fixed;
   top: 0;
-  display: flex;
   width: 100%;
   min-height: 3.75rem;
   justify-content: space-evenly;
@@ -27,15 +25,16 @@
   padding: 0 3rem;
 }
 
-.root-content-container {
+.protected-page-layout__content-container {
   position: relative;
   top: 3.75rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-content: center;
 }
 
-.root-layout-footer {
+.protected-page-layout__footer {
   position: fixed;
   bottom: 0;
   display: flex;

@@ -1,10 +1,10 @@
-import { Page } from '../../core/components/Page';
+import { PageContent } from '../../core/components/PageContent';
 import { NewShiftContainer } from './NewShiftContainer';
 
 export const NewShiftPage = () => {
   return (
-    <Page classes="new-shift-page">
+    <PageContent classes="new-shift-page">
       <NewShiftContainer />
-    </Page>
+    </PageContent>
   );
 };

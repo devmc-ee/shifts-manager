@@ -14,8 +14,8 @@ interface ButtonProps {
   children?: ReactNode;
   icon?: ReactNode;
   className?: string;
-  active: boolean;
-  handleClick: (event: MouseEvent<HTMLButtonElement>) => void;
+  active?: boolean;
+  handleClick?: (event: MouseEvent<HTMLButtonElement>) => void;
 }
 
 export const CustomButton = ({ label, icon, handleClick, active, ...props }: ButtonProps) => {

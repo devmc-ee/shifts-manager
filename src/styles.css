@@ -20,8 +20,3 @@
 .element-with-css-var {
   color: var(--primary-color);
 }
-
-.font-bold {
-  font-weight: 600;
-  color: var(--secondary-color);
-}

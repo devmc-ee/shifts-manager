@@ -2,18 +2,22 @@ import './styles.css';
 import { Link, Route, Routes } from 'react-router-dom';
 import { Dashboard, Login } from './pages';
 import { ProtectedRoute } from './core/components/ProtectedRoute';
-import { routes } from './core/routing/routes';
-import { NewStaffPage, StaffPage } from './staff/components';
-import { RootNavLayout } from './core/components/RootNavLayout';
+import { PublicRoutesEnum, ProtectedRoutesEnum } from './config/routes/routes';
+import { NewTeamPage, TeamPage } from './team/components';
+import { RootNavLayout } from './core/components/ProtectedPageLayout';
 import { ShiftsPage, NewShiftPage } from './shift/components';
+import { useUrlObserver } from '../src/core/hooks/useUrlObserver';
+import { TimeSheetsPage } from './timeSheet/TimeSheetsPage';
 
 export const App = () => {
+  useUrlObserver();
+
   return (
     <>
       <Routes>
-        <Route path={routes.login} element={<Login />} />
+        <Route path={PublicRoutesEnum.login} element={<Login />} />
         <Route
-          path={routes.protected.root}
+          path={ProtectedRoutesEnum.dashboard}
           element={
             <ProtectedRoute>
               <RootNavLayout />
@@ -29,23 +33,23 @@ export const App = () => {
             }
           />
           <Route
-            path={routes.protected.staff}
+            path={ProtectedRoutesEnum.team}
             element={
               <ProtectedRoute>
-                <StaffPage />
+                <TeamPage />
               </ProtectedRoute>
             }
           />
           <Route
-            path={routes.protected.staffNew}
+            path={ProtectedRoutesEnum.teamNew}
             element={
               <ProtectedRoute>
-                <NewStaffPage />
+                <NewTeamPage />
               </ProtectedRoute>
             }
           />
           <Route
-            path={routes.protected.shifts}
+            path={ProtectedRoutesEnum.shifts}
             element={
               <ProtectedRoute>
                 <ShiftsPage />
@@ -53,10 +57,18 @@ export const App = () => {
             }
           />
           <Route
-            path={routes.protected.shiftNew}
+            path={ProtectedRoutesEnum.shiftNew}
             element={
               <ProtectedRoute>
                 <NewShiftPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path={ProtectedRoutesEnum.timeSheets}
+            element={
+              <ProtectedRoute>
+                <TimeSheetsPage />
               </ProtectedRoute>
             }
           />
@@ -67,7 +79,7 @@ export const App = () => {
           element={
             <main style={{ padding: '1rem' }}>
               <p>There&apos;s nothing here!</p>
-              <Link to={routes.protected.dashboard}>Dashboard</Link>
+              <Link to={ProtectedRoutesEnum.dashboard}>Dashboard</Link>
             </main>
           }
         />

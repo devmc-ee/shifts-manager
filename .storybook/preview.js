@@ -20,6 +20,7 @@ const withProviders = (Story) => {
 export const decorators = [withProviders];
 
 export const parameters = {
+  layout: 'fullscreen',
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
     matchers: {
