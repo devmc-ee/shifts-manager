@@ -16,9 +16,9 @@ export const NavMenu = ({ activeRoute, icons, onClick }: NavMenuProps): JSX.Elem
   const { t } = useTranslation();
 
   const getIcon = (iconName: string): JSX.Element => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    //@ts-ignore icons type
-    return !!icons[iconName] ? icons[iconName]() : <HomeIcon />;
+    const Icon = icons[iconName];
+
+    return !!Icon ? <Icon /> : <HomeIcon />;
   };
 
   const handleClick = (url: string) => () => {
