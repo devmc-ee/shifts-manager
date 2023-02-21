@@ -4,8 +4,6 @@ import { COLOR_VARIANTS } from '../../../types/ColorVariants';
 import { IconButtonWithLabel } from './IconButtonWithLabel';
 import ProfileIcon from '../../../../assets/icons/profile-icon.svg';
 
-console.log(ProfileIcon);
-
 export default {
   title: 'Buttons/IconButtonWithLabel',
   component: IconButtonWithLabel,
