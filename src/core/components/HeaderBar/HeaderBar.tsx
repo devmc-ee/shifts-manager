@@ -1,6 +1,6 @@
 import './HeaderBar.css';
 import { BurgerMenuIcon } from '../../../assets/icons/BurgerMenuIcon';
-import { ProfileIcon } from '../../../assets/icons/ProfileIcon';
+import ProfileIcon from '../../../assets/icons/profile-icon.svg';
 import { useAppDispatch } from '../../../config/redux/hooks';
 import { callHeaderBlockButtonClicked } from '../../redux/coreSlice';
 import { COLOR_VARIANTS } from '../../types/ColorVariants';

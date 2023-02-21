@@ -22,12 +22,17 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(?:ico|gif|png|svg|jpeg|jpeg)$/i,
+        test: /\.(?:ico|gif|png|jpeg|jpeg)$/i,
         type: 'asset/resource',
       },
       {
         test: /\.(woff(2)?|eot|ttf|otf)$/i,
         type: 'asset/resource',
+      },
+      {
+        test: /\.svg$/i,
+        issuer: /\.[jt]sx?$/,
+        use: ['@svgr/webpack'],
       },
     ],
   },

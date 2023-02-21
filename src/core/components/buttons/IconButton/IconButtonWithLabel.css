@@ -1,17 +1,18 @@
-.icon-button--primary-contrast svg {
-  fill: var(--primary-color-contrast);
-  color: var(--primary-color-contrast);
+.icon-button,
+.icon-button--primary {
+  color: var(--primary-color) !important;
 }
 
-.icon-button--secondary svg {
-  fill: var(--secondary-color);
-  color: var(--secondary-color);
+.icon-button--primary-contrast {
+  color: var(--primary-color-contrast) !important;
 }
 
-.icon-button--secondary-contrast svg {
-  fill: var(--secondary-color-contrast);
-  stroke: var(--secondary-color-contrast);
-  color: var(--secondary-color-contrast);
+.icon-button--secondary {
+  color: var(--secondary-color) !important;
+}
+
+.icon-button--secondary-contrast {
+  color: var(--secondary-color-contrast) !important;
 }
 
 .icon-button {
