@@ -15,3 +15,9 @@
   justify-content: center;
   width: 100%;
 }
+
+.header-bar .icon-button--primary-contrast,
+.icon-button-label--primary-contrast {
+  color: var(--primary-color-contrast);
+  fill: var(--primary-color-contrast);
+}
