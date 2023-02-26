@@ -7,7 +7,6 @@ import { PageContent } from '../../core/components/PageContent';
 import { ProtectedRoutesEnum } from '../../config/routes/routes';
 import { LoginForm } from '../../user/components/LoginForm';
 import { LanguageSwitcher } from '../../core/components/LanguageSwitcher';
-import './LoginPage.css';
 
 export const Login = () => {
   const { t } = useTranslation();

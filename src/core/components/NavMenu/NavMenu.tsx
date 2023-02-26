@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 import { HomeIcon } from '../../../assets/icons';
 import { IconButtonWithLabel } from '../buttons/IconButton';
 import { COLOR_VARIANTS } from '../../types/ColorVariants';
-import './NavMenu.css';
 
 interface NavMenuProps {
   activeRoute: string;
