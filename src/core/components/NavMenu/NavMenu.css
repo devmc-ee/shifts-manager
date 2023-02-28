@@ -32,15 +32,3 @@
   min-height: 4.19rem;
   border-radius: unset;
 }
-
-.nav-menu .icon-button--primary-contrast,
-.icon-button-label--primary-contrast {
-  color: var(--primary-color-contrast);
-  fill: var(--primary-color-contrast);
-}
-
-.nav-menu .icon-button--secondary,
-.icon-button-label--secondary {
-  color: var(--secondary-color);
-  fill: var(--secondary-color);
-}

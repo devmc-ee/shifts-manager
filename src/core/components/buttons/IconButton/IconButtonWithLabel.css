@@ -27,7 +27,6 @@
 }
 
 .icon-button--primary svg {
-  color: white;
   fill: var(--primary-color);
 }
 
