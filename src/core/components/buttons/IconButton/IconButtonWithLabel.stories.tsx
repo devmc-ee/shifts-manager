@@ -1,15 +1,24 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { BurgerMenuIcon, ProfileIcon } from '../../../../assets/icons';
+import { BurgerMenuIcon } from '../../../../assets/icons';
 import { COLOR_VARIANTS } from '../../../types/ColorVariants';
 import { IconButtonWithLabel } from './IconButtonWithLabel';
+import ProfileIcon from '../../../../assets/icons/profile-icon.svg';
 
 export default {
   title: 'Buttons/IconButtonWithLabel',
   component: IconButtonWithLabel,
 } as ComponentMeta<typeof IconButtonWithLabel>;
 
-const Template: ComponentStory<typeof IconButtonWithLabel> = (IconButtonProp) => {
-  return <IconButtonWithLabel {...IconButtonProp} />;
+const Template: ComponentStory<typeof IconButtonWithLabel> = (args) => {
+  const iconButtonArgs = {
+    ...args,
+  };
+
+  return (
+    <div style={{ padding: '10px', display: 'inline-block', backgroundColor: args.variant === COLOR_VARIANTS.PRIMARY_CONTRAST ? 'black' : 'white' }}>
+      <IconButtonWithLabel {...iconButtonArgs} />
+    </div>
+  );
 };
 
 export const Profile = Template.bind({});
