@@ -1,4 +1,3 @@
-import './HeaderBar.css';
 import { BurgerMenuIcon } from '../../../assets/icons/BurgerMenuIcon';
 import ProfileIcon from '../../../assets/icons/profile-icon.svg';
 import { useAppDispatch } from '../../../config/redux/hooks';

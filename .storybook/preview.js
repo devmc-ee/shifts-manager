@@ -3,7 +3,7 @@ import { theme } from '../src/config/theme.ts';
 import { Provider } from 'react-redux';
 import { store } from '../src/config/redux/store';
 import { BrowserRouter } from 'react-router-dom';
-import '../src/styles.css';
+import '../src/assets/theme/styles.scss';
 
 const withProviders = (Story) => {
   return (

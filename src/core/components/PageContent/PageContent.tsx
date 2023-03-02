@@ -1,6 +1,5 @@
 import { useNotisnack } from '../../hooks/useNotisnack';
 import { addPostfixToClasses } from '../../utils/addPostfixToClasses';
-import './PageContent.css';
 
 interface PageProps {
   classes: string;
