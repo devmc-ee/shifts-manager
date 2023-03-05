@@ -14,6 +14,16 @@
       "shifts": "Shifts",
       "timesheets": "Timesheets",
       "team": "Team"
+    },
+    "leftSlideInMenu": {
+      "menu": "Menu",
+      "business": "Business",
+      "settings": "Settings"
+    },
+    "rightSlideInMenu": {
+      "profile": "Profile",
+      "position": "Position",
+      "contacts": "Contacts"
     }
   },
   "loginForm": {

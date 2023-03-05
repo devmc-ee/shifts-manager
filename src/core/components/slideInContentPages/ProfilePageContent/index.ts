@@ -1,0 +1,1 @@
+export { ProfilePageContent } from './ProfilePageContent';

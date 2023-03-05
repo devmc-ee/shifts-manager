@@ -14,6 +14,16 @@
       "shifts": "Töögraafik",
       "timesheets": "Ajatabel",
       "team": "Meeskond"
+    },
+    "leftSlideInMenu": {
+      "menu": "Menüü",
+      "business": "Äri",
+      "settings": "Seaded"
+    },
+    "rightSlideInMenu": {
+      "profile": "Profiil",
+      "position": "Amet",
+      "contacts": "Kontaktid"
     }
   },
   "loginForm": {

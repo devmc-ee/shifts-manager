@@ -11,6 +11,7 @@ import { theme } from './config/theme';
 import { ThemeProvider } from '@mui/material';
 import { SnackbarProvider } from 'notistack';
 import './config/i18n';
+import { SlideInProvider } from './core/components/SlideInProvider';
 
 const container = document.getElementById('root');
 const root = createRoot(container!);
@@ -24,6 +25,7 @@ root.render(
           <ThemeProvider theme={theme}>
             <CssBaseline enableColorScheme={true} />
             <SnackbarProvider autoHideDuration={4000} anchorOrigin={{ vertical: 'top', horizontal: 'center' }}>
+              <SlideInProvider />
               <App />
             </SnackbarProvider>
           </ThemeProvider>

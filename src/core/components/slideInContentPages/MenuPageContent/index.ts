@@ -1,0 +1,1 @@
+export { MenuPageContent } from './MenuPageContent';

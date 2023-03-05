@@ -4,3 +4,4 @@ export { HomeIcon } from './HomeIcon';
 export { ShiftsIcon } from './ShiftsIcon';
 export { TeamIcon } from './TeamIcon';
 export { TimeSheetsIcon } from './TimeSheetsIcon';
+export { ProfileIconLarge } from './ProfileIconLarge';
