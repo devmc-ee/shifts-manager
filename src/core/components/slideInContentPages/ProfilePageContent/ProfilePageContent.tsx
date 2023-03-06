@@ -1,8 +1,7 @@
 import { SLIDE_IN_MENU_RIGHT } from '../../../../config/slideInContentPageConfig';
-import { ProfileIconLarge } from '../../../../assets/icons';
+import ProfileIconLarge from '../../../../assets/icons/profile-icon-large.svg';
 import { MenuItemList } from '../MenuItemList';
 import { SLIDE_FROM_SIDE } from '../../SlideInProvider/SlideInProvider';
-import './ProfilePageContent.css';
 
 export const ProfilePageContent = (): JSX.Element => {
   return (

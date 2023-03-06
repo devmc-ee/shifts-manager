@@ -1,11 +1,10 @@
-import { BurgerMenuIcon } from '../../../assets/icons/BurgerMenuIcon';
+import BurgerMenuIcon from '../../../assets/icons/burger-menu-icon.svg';
 import ProfileIcon from '../../../assets/icons/profile-icon.svg';
 import { useAppDispatch } from '../../../config/redux/hooks';
 import { COLOR_VARIANTS } from '../../types/ColorVariants';
 import { IconButtonWithLabel } from '../buttons/IconButton';
 import { SLIDE_FROM_SIDE, SLIDE_IN_CONTENT_COMPONENT_NAME } from '../SlideInProvider/SlideInProvider';
 import { openSlideInBar } from '../../redux/coreSlice';
-import './HeaderBar.css';
 
 interface HeaderBarProps {
   title: string;

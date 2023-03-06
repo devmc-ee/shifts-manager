@@ -1,7 +1,6 @@
 import { SLIDE_IN_MENU_LEFT } from '../../../../config/slideInContentPageConfig';
 import { MenuItemList } from '../MenuItemList';
 import { SLIDE_FROM_SIDE } from '../../SlideInProvider/SlideInProvider';
-import './MenuPageContent.css';
 
 export const MenuPageContent = (): JSX.Element => {
   return (

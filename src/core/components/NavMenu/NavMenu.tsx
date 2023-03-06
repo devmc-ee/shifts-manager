@@ -1,10 +1,9 @@
 import { Link } from 'react-router-dom';
 import { NAV_MENU, NavMenuItemType } from '../../../config/menuConfig';
 import { useTranslation } from 'react-i18next';
-import { HomeIcon } from '../../../assets/icons';
+import HomeIcon from '../../../assets/icons/NavIconSet';
 import { IconButtonWithLabel } from '../buttons/IconButton';
 import { COLOR_VARIANTS } from '../../types/ColorVariants';
-import './NavMenu.css';
 
 interface NavMenuProps {
   activeRoute: string;
@@ -18,7 +17,7 @@ export const NavMenu = ({ activeRoute, icons, onClick }: NavMenuProps): JSX.Elem
   const getIcon = (iconName: string): JSX.Element => {
     const Icon = icons[iconName];
 
-    return !!Icon ? <Icon /> : <HomeIcon />;
+    return !!Icon ? <Icon /> : (HomeIcon as unknown as JSX.Element);
   };
 
   const handleClick = (url: string) => () => {

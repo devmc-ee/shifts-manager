@@ -3,7 +3,6 @@ import classnames from 'classnames';
 import { MouseEvent } from 'react';
 import { COLOR_VARIANTS } from '../../../types/ColorVariants';
 import { getPostfixedClassNamesArray } from '../../../utils/addPostfixToClasses';
-import './IconButtonWithLabel.css';
 
 interface IconButtonProps {
   icon: JSX.Element;

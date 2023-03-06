@@ -1,7 +1,6 @@
 import classnames from 'classnames';
 import { useState, useEffect } from 'react';
 import { SLIDE_FROM_SIDE } from '../SlideInProvider/SlideInProvider';
-import './SlideInBar.css';
 
 interface SlideInBarProps {
   children: JSX.Element;

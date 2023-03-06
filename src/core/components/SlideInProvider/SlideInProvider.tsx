@@ -5,7 +5,6 @@ import { closeSlideInBars } from '../../redux/coreSlice';
 import { SlideInBar } from '../SlideInBar';
 import { MenuPageContent } from '../slideInContentPages/MenuPageContent';
 import { ProfilePageContent } from '../slideInContentPages/ProfilePageContent';
-import './SlideInProvider.css';
 
 export const enum SLIDE_IN_CONTENT_COMPONENT_NAME {
   LEFT_MENU = 'leftMenu',

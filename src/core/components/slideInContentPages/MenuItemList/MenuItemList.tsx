@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { t } from 'i18next';
 import { SlideInBarMenuItemsType } from '../../../../config/slideInContentPageConfig';
-import './MenuItemList.css';
 
 interface MenuItemListProps {
   itemList: SlideInBarMenuItemsType[];

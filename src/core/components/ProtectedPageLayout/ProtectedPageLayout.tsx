@@ -1,7 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import { HeaderBar } from '../HeaderBar';
 import { NavMenu } from '../NavMenu';
-import './ProtectedPageLayout.css';
 
 export const ProtectedPageLayout = (): JSX.Element => {
   return (
