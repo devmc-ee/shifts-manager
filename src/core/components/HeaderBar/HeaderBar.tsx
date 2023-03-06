@@ -1,5 +1,5 @@
 import { BurgerMenuIcon } from '../../../assets/icons/BurgerMenuIcon';
-import { ProfileIcon } from '../../../assets/icons/ProfileIcon';
+import ProfileIcon from '../../../assets/icons/profile-icon.svg';
 import { useAppDispatch } from '../../../config/redux/hooks';
 import { COLOR_VARIANTS } from '../../types/ColorVariants';
 import { IconButtonWithLabel } from '../buttons/IconButton';

@@ -31,6 +31,18 @@ module.exports = {
       os: false,
     }
 
+    config.module.rules.forEach((rule) => {
+      if(rule.type === 'asset/resource') {
+        rule.test = test = /\.(ico|jpg|jpeg|png|apng|gif|eot|otf|webp|ttf|woff|woff2|cur|ani|pdf)(\?.*)?$/
+      }
+    });
+
+    config.module.rules.push({
+      test: /\.svg$/i,
+      issuer: /\.[jt]sx?$/,
+      use: ['@svgr/webpack'],
+    },)
+
     return  config
 },
 };
