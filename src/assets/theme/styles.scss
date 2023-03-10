@@ -5,12 +5,12 @@
 @import '../../core/components/buttons/IconButton/IconButtonWithLabel';
 @import '../../core/components/HeaderBar/HeaderBar';
 @import '../../core/components/LanguageSwitcher/LanguageSwitcher';
-@import '../../core/components/NavMenu/NavMenu';
+@import '../../core/components/Menus/NavMenu/NavMenu';
 @import '../../core/components/PageContent/PageContent';
 @import '../../core/components/ProtectedPageLayout/ProtectedPageLayout';
 @import '../../pages/Login/LoginPage';
 @import '../../user/components/LoginForm/LoginForm';
 @import '../../core/components/SlideInBar/SlideInBar';
-@import '../../core/components/slideInContentPages/MenuItemList/MenuItemList';
-@import '../../core/components/slideInContentPages/MenuPageContent/MenuPageContent';
-@import '../../core/components/slideInContentPages/ProfilePageContent/ProfilePageContent';
+@import '../../core/components/Menus/MenuItemList/MenuItemList';
+@import '../../core/components/Menus/MainMenuBlock/MainMenuBlock';
+@import '../../user/components/ProfileMenuBlock/ProfileMenuBlock';

@@ -15,15 +15,17 @@
       "timesheets": "Timesheets",
       "team": "Team"
     },
-    "leftSlideInMenu": {
-      "menu": "Menu",
-      "business": "Business",
-      "settings": "Settings"
-    },
-    "rightSlideInMenu": {
-      "profile": "Profile",
-      "position": "Position",
-      "contacts": "Contacts"
+    "slideInBar": {
+      "mainMenu": {
+        "title": "Menu",
+        "business": "Business",
+        "settings": "Settings"
+      },
+      "profileMenu": {
+        "title": "Profile",
+        "position": "Position",
+        "contacts": "Contacts"
+      }
     }
   },
   "loginForm": {

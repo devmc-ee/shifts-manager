@@ -15,15 +15,17 @@
       "timesheets": "Ajatabel",
       "team": "Meeskond"
     },
-    "leftSlideInMenu": {
-      "menu": "Menüü",
-      "business": "Äri",
-      "settings": "Seaded"
-    },
-    "rightSlideInMenu": {
-      "profile": "Profiil",
-      "position": "Amet",
-      "contacts": "Kontaktid"
+    "slideInBar": {
+      "mainMenu": {
+        "title": "Menu",
+        "business": "Business",
+        "settings": "Settings"
+      },
+      "profileMenu": {
+        "title": "Profile",
+        "position": "Position",
+        "contacts": "Contacts"
+      }
     }
   },
   "loginForm": {

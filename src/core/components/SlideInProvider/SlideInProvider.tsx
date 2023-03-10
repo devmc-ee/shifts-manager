@@ -1,69 +1,47 @@
-import { useRef, useLayoutEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useAppSelector, useAppDispatch } from '../../../config/redux/hooks';
 import { closeSlideInBars } from '../../redux/coreSlice';
 import { SlideInBar } from '../SlideInBar';
-import { MenuPageContent } from '../slideInContentPages/MenuPageContent';
-import { ProfilePageContent } from '../slideInContentPages/ProfilePageContent';
+import { t } from 'i18next';
+import { SLIDE_IN_MENU_BLOCKS_COMPONENT_MAP, SLIDE_IN_MENU_BLOCK_COMPONENT_NAME } from '../../../config/slideInMenuConfig';
 
-export const enum SLIDE_IN_CONTENT_COMPONENT_NAME {
-  LEFT_MENU = 'leftMenu',
-  RIGHT_MENU = 'rightMenu',
-}
-
-export const SLIDE_IN_CONTENT_COMPONENT_MAP = {
-  [SLIDE_IN_CONTENT_COMPONENT_NAME.LEFT_MENU]: MenuPageContent,
-  [SLIDE_IN_CONTENT_COMPONENT_NAME.RIGHT_MENU]: ProfilePageContent,
-};
-
-export const enum SLIDE_FROM_SIDE {
-  LEFT = 'left',
-  RIGHT = 'right',
-}
+const portalDivElement = document.createElement('div');
+portalDivElement.id = 'portal-root';
 
 export const SlideInProvider = () => {
-  const slideInBarsConfigsArray = useAppSelector(({ core }) => core.slideInBarConfigs);
-  const [Component, setComponent] = useState<JSX.Element | null>(null);
-  const [slideFrom, setSlideFrom] = useState(SLIDE_FROM_SIDE.LEFT);
-  const title = slideFrom === 'left' ? 'Menu' : 'Profile';
+  const slideInBarArgs = useAppSelector(({ core }) => core.slideInBar);
   const dispatch = useAppDispatch();
-
-  const portalWrapperRef = useRef<HTMLDivElement | null>(null);
+  const [Component, setComponent] = useState(<></>);
+  const [menuTitle, setMenuTitle] = useState('');
 
   const handleClose = () => {
     dispatch(closeSlideInBars());
     setTimeout(() => {
-      if (portalWrapperRef.current && portalWrapperRef.current.parentNode === document.body) {
-        document.body.removeChild(portalWrapperRef.current);
+      setComponent(<></>);
+      if (document.querySelector('div#portal-root')) {
+        document.body.removeChild(portalDivElement);
       }
     }, 225);
   };
 
   useLayoutEffect(() => {
-    if (!slideInBarsConfigsArray.length) {
-      handleClose();
+    if (slideInBarArgs) document.body.appendChild(portalDivElement);
+  }, [slideInBarArgs]);
 
-      return;
+  useEffect(() => {
+    if (slideInBarArgs) {
+      setComponent(SLIDE_IN_MENU_BLOCKS_COMPONENT_MAP[slideInBarArgs.componentName as SLIDE_IN_MENU_BLOCK_COMPONENT_NAME]);
+
+      const translation = t(`core.slideInBar.${slideInBarArgs?.componentName}.title`);
+      setMenuTitle(translation);
     }
+  }, [slideInBarArgs]);
 
-    for (const slideInBarConfig of slideInBarsConfigsArray) {
-      const { componentName, from } = slideInBarConfig;
-      if (componentName in SLIDE_IN_CONTENT_COMPONENT_MAP) {
-        setComponent(SLIDE_IN_CONTENT_COMPONENT_MAP[componentName]);
-        setSlideFrom(from);
-      }
-    }
-
-    portalWrapperRef.current = document.createElement('div');
-    document.body.appendChild(portalWrapperRef.current);
-  }, [slideInBarsConfigsArray]);
-
-  return portalWrapperRef.current
-    ? createPortal(
-        <SlideInBar handleClose={handleClose} title={title} open={!!slideInBarsConfigsArray.length} from={slideFrom}>
-          {Component as JSX.Element}
-        </SlideInBar>,
-        portalWrapperRef.current
-      )
-    : null;
+  return createPortal(
+    <SlideInBar handleClose={handleClose} title={menuTitle} open={!!slideInBarArgs} from={slideInBarArgs?.from}>
+      {Component}
+    </SlideInBar>,
+    portalDivElement
+  );
 };

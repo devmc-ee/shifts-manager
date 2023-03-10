@@ -1,5 +1,5 @@
-import { useAppSelector } from '../../../config/redux/hooks';
-import icons from '../../../assets/icons/NavIconSet';
+import { useAppSelector } from '../../../../config/redux/hooks';
+import icons from '../../../../assets/icons/NavIconSet';
 
 import { NavMenu } from './NavMenu';
 

@@ -2,10 +2,11 @@ import { createSlice } from '@reduxjs/toolkit';
 import { CoreReducerState } from '../types/CoreReducerState.d';
 import { ProtectedRoutesEnum } from '../../config/routes/routes';
 
+//slideInBar
 const initialState: CoreReducerState = {
   notifications: [],
   activeRoute: ProtectedRoutesEnum.dashboard,
-  slideInBarConfigs: [],
+  slideInBar: null,
 };
 
 export const coreSlice = createSlice({
@@ -22,10 +23,10 @@ export const coreSlice = createSlice({
       state.activeRoute = action.payload;
     },
     SLIDE_IN_BAR_OPENED: (state, { payload: { from, componentName } }) => {
-      state.slideInBarConfigs.push({ from, componentName });
+      state.slideInBar = { from, componentName };
     },
     SLIDE_IN_BARS_CLOSED: (state) => {
-      state.slideInBarConfigs = [];
+      state.slideInBar = null;
     },
   },
 });

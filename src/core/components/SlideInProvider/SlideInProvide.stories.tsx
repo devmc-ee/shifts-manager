@@ -1,7 +1,8 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { useAppDispatch } from '../../../config/redux/hooks';
+import { SLIDE_FROM_SIDE, SLIDE_IN_MENU_BLOCK_COMPONENT_NAME } from '../../../config/slideInMenuConfig';
 import { openSlideInBar } from '../../redux/coreSlice';
-import { SlideInProvider, SLIDE_FROM_SIDE, SLIDE_IN_CONTENT_COMPONENT_NAME } from './SlideInProvider';
+import { SlideInProvider } from './SlideInProvider';
 
 export default {
   title: 'SlideInProvider',
@@ -17,8 +18,8 @@ const Template: ComponentStory<typeof SlideInProvider> = () => {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-      <button onClick={() => handleOpenSlideInProvider(SLIDE_FROM_SIDE.LEFT, SLIDE_IN_CONTENT_COMPONENT_NAME.LEFT_MENU)}>Click to add Left Menu</button>
-      <button onClick={() => handleOpenSlideInProvider(SLIDE_FROM_SIDE.RIGHT, SLIDE_IN_CONTENT_COMPONENT_NAME.RIGHT_MENU)}>Click to add Right Menu</button>
+      <button onClick={() => handleOpenSlideInProvider(SLIDE_FROM_SIDE.LEFT, SLIDE_IN_MENU_BLOCK_COMPONENT_NAME.LEFT_MENU)}>Click to add Left Menu</button>
+      <button onClick={() => handleOpenSlideInProvider(SLIDE_FROM_SIDE.RIGHT, SLIDE_IN_MENU_BLOCK_COMPONENT_NAME.RIGHT_MENU)}>Click to add Right Menu</button>
       <SlideInProvider />
     </div>
   );

@@ -1,7 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { MenuItemList } from './MenuItemList';
-import { SLIDE_FROM_SIDE } from '../../SlideInProvider/SlideInProvider';
-import { SLIDE_IN_MENU_LEFT, SLIDE_IN_MENU_RIGHT } from '../../../../config/slideInContentPageConfig';
+import { MAIN_MENU_BLOCK, PROFILE_MENU_BLOCK, SLIDE_IN_MENU_BLOCK_COMPONENT_NAME } from '../../../../config/slideInMenuConfig';
 
 export default {
   title: 'MenuItemList',
@@ -13,7 +12,7 @@ const Template: ComponentStory<typeof MenuItemList> = (args) => {
 };
 
 export const LeftMenu = Template.bind({});
-LeftMenu.args = { direction: SLIDE_FROM_SIDE.LEFT, itemList: SLIDE_IN_MENU_LEFT };
+LeftMenu.args = { componentName: SLIDE_IN_MENU_BLOCK_COMPONENT_NAME.LEFT_MENU, itemList: MAIN_MENU_BLOCK };
 
 export const RightMenu = Template.bind({});
-RightMenu.args = { direction: SLIDE_FROM_SIDE.RIGHT, itemList: SLIDE_IN_MENU_RIGHT };
+RightMenu.args = { componentName: SLIDE_IN_MENU_BLOCK_COMPONENT_NAME.RIGHT_MENU, itemList: PROFILE_MENU_BLOCK };

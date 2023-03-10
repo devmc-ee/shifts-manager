@@ -15,15 +15,17 @@
       "timesheets": "แผ่นเวลา",
       "team": "บุคลากร"
     },
-    "leftSlideInMenu": {
-      "menu": "เมนู",
-      "business": "ธุรกิจ",
-      "settings": "การตั้งค่า"
-    },
-    "rightSlideInMenu": {
-      "profile": "โปรไฟล์บัญชี",
-      "position": "ตำแหน่ง",
-      "contacts": "ติดต่อ"
+    "slideInBar": {
+      "mainMenu": {
+        "title": "เมนู",
+        "business": "ธุรกิจ",
+        "settings": "การตั้งค่า"
+      },
+      "profileMenu": {
+        "title": "โปรไฟล์บัญชี",
+        "position": "ตำแหน่ง",
+        "contacts": "ติดต่อ"
+      }
     }
   },
   "loginForm": {

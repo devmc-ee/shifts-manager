@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { SlideInBar } from './SlideInBar';
-import { SLIDE_FROM_SIDE } from '../SlideInProvider/SlideInProvider';
 import { useState } from 'react';
+import { SLIDE_FROM_SIDE } from '../../../config/slideInMenuConfig';
 
 export default {
   title: 'SlideInBar',

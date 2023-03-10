@@ -1,5 +1,5 @@
 .slide-in {
-  &-provider {
+  &-menu {
     position: fixed;
     top: 0;
     z-index: 1000;
@@ -24,7 +24,6 @@
 
   &-bar {
     position: fixed;
-    width: 70vw;
     height: 100vh;
     background-color: white;
     top: 0;
@@ -124,5 +123,23 @@
 
   0% {
     opacity: 0;
+  }
+}
+
+$slide-in-bar-width: (
+  bp-320: 15rem,
+  bp-360: 17rem,
+  bp-480: 24rem,
+  bp-768: 26rem,
+  bp-1024: 22rem,
+  bp-1200: 20rem,
+  bp-1400: 18rem,
+);
+
+@each $breakpoint, $width in $breakpoints {
+  @media (min-width: $width) {
+    .slide-in-bar {
+      width: map-get($slide-in-bar-width, $breakpoint);
+    }
   }
 }
