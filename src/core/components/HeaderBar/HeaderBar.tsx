@@ -1,4 +1,5 @@
-import { BurgerMenuIcon } from '../../../assets/icons/BurgerMenuIcon';
+import BurgerMenuIcon from '../../../assets/icons/burger-menu-icon.svg';
+
 import ProfileIcon from '../../../assets/icons/profile-icon.svg';
 import { useAppDispatch } from '../../../config/redux/hooks';
 import { callHeaderBlockButtonClicked } from '../../redux/coreSlice';
