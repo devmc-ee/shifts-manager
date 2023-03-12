@@ -7,7 +7,6 @@ export interface IMenuItemListItem {
   url: string;
 }
 
-//TODO Refactor Logout mechanics.
 export const MAIN_MENU_BLOCK: IMenuItemListItem[] = [
   {
     id: 'business',
@@ -27,10 +26,6 @@ export const PROFILE_MENU_BLOCK: IMenuItemListItem[] = [
   {
     id: 'contacts',
     url: ProtectedRoutesEnum.contacts,
-  },
-  {
-    id: 'logout',
-    url: '',
   },
 ];
 

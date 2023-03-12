@@ -24,8 +24,7 @@
       "profileMenu": {
         "title": "Profiil",
         "position": "Amet",
-        "contacts": "Kontaktid",
-        "logout": "Logi välja"
+        "contacts": "Kontaktid"
       }
     }
   },
