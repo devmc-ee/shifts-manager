@@ -9,7 +9,6 @@ import IconButton from '@mui/material/IconButton/IconButton';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { useTranslation } from 'react-i18next';
-import './LoginForm.css';
 
 export interface LoginFormProps {
   handleFieldValueChange: ({ target }: ChangeEvent<HTMLInputElement>) => void;

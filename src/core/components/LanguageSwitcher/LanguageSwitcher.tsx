@@ -5,7 +5,6 @@ import MenuProps from '@mui/material/Menu/Menu';
 import PublicIcon from '@mui/icons-material/Public';
 import { languages } from '../../../config/i18n';
 import { useTranslation } from 'react-i18next';
-import './LanguageSwitcher.css';
 
 interface LanguageSwitcherProps {
   language: string;

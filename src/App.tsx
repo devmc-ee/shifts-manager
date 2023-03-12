@@ -1,4 +1,4 @@
-import './styles.css';
+import './assets/theme/styles.scss';
 import { Link, Route, Routes } from 'react-router-dom';
 import { Dashboard, Login } from './pages';
 import { ProtectedRoute } from './core/components/ProtectedRoute';

@@ -1,0 +1,35 @@
+.icon-button {
+  color: $primaryColor !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  &--primary {
+    color: $primaryColor !important;
+
+    &-contrast {
+      color: $primaryColorContrast !important;
+    }
+  }
+
+  &--secondary {
+    color: $secondaryColor !important;
+
+    &-contrast {
+      color: $secondaryColorContrast !important;
+    }
+  }
+
+  &-label {
+    font-size: 0.63rem;
+    padding: 0.25rem;
+
+    &--primary-contrast {
+      color: $primaryColorContrast;
+    }
+
+    &--secondary {
+      color: $secondaryColor;
+    }
+  }
+}
