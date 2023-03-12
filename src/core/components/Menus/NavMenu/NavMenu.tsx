@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { NAV_MENU, NavMenuItemType } from '../../../../config/navMenuConfig';
+import { NAV_MENU, INavMenuItem } from '../../../../assets/menu/navMenuData';
 import { useTranslation } from 'react-i18next';
 import HomeIcon from '../../../../assets/icons/home-icon.svg';
 import { IconButtonWithLabel } from '../../buttons/IconButton';
@@ -27,7 +27,7 @@ export const NavMenu = ({ activeRoute, icons, onClick }: NavMenuProps): JSX.Elem
   return (
     <nav className="nav-menu">
       <div className="nav-menu-buttons-container">
-        {NAV_MENU.map((item: NavMenuItemType) => (
+        {NAV_MENU.map((item: INavMenuItem) => (
           <div className="nav-menu-button" key={item.id}>
             <Link to={item.url}>
               <IconButtonWithLabel

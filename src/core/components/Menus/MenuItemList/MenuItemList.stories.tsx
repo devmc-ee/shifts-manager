@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { MenuItemList } from './MenuItemList';
-import { MAIN_MENU_BLOCK, PROFILE_MENU_BLOCK, SLIDE_IN_MENU_BLOCK_COMPONENT_NAME } from '../../../../config/slideInMenuConfig';
+import { MAIN_MENU_BLOCK, PROFILE_MENU_BLOCK, SLIDE_IN_MENU_BLOCK_COMPONENT_NAME } from '../../../../assets/menu/slideInMenuData';
 
 export default {
   title: 'MenuItemList',

@@ -17,14 +17,15 @@
     },
     "slideInBar": {
       "mainMenu": {
-        "title": "Menu",
-        "business": "Business",
-        "settings": "Settings"
+        "title": "Menüü",
+        "business": "Äri",
+        "settings": "Seadmed"
       },
       "profileMenu": {
-        "title": "Profile",
-        "position": "Position",
-        "contacts": "Contacts"
+        "title": "Profiil",
+        "position": "Amet",
+        "contacts": "Kontaktid",
+        "logout": "Logi välja"
       }
     }
   },

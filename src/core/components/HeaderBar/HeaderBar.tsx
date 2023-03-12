@@ -4,7 +4,7 @@ import { useAppDispatch } from '../../../config/redux/hooks';
 import { COLOR_VARIANTS } from '../../types/ColorVariants';
 import { IconButtonWithLabel } from '../buttons/IconButton';
 import { openSlideInBar } from '../../redux/coreSlice';
-import { SLIDE_FROM_SIDE, SLIDE_IN_MENU_BLOCK_COMPONENT_NAME } from '../../../config/slideInMenuConfig';
+import { SLIDE_FROM_SIDE, SLIDE_IN_MENU_BLOCK_COMPONENT_NAME } from '../../../assets/menu/slideInMenuData';
 
 interface HeaderBarProps {
   title: string;

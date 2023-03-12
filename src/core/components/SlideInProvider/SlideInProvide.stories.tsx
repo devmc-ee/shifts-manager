@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { useAppDispatch } from '../../../config/redux/hooks';
-import { SLIDE_FROM_SIDE, SLIDE_IN_MENU_BLOCK_COMPONENT_NAME } from '../../../config/slideInMenuConfig';
+import { SLIDE_FROM_SIDE, SLIDE_IN_MENU_BLOCK_COMPONENT_NAME } from '../../../assets/menu/slideInMenuData';
 import { openSlideInBar } from '../../redux/coreSlice';
 import { SlideInProvider } from './SlideInProvider';
 

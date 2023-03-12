@@ -24,7 +24,8 @@
       "profileMenu": {
         "title": "Profile",
         "position": "Position",
-        "contacts": "Contacts"
+        "contacts": "Contacts",
+        "logout": "Log out"
       }
     }
   },

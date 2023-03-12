@@ -4,7 +4,7 @@ import { useAppSelector, useAppDispatch } from '../../../config/redux/hooks';
 import { closeSlideInBars } from '../../redux/coreSlice';
 import { SlideInBar } from '../SlideInBar';
 import { t } from 'i18next';
-import { SLIDE_IN_MENU_BLOCKS_COMPONENT_MAP, SLIDE_IN_MENU_BLOCK_COMPONENT_NAME } from '../../../config/slideInMenuConfig';
+import { SLIDE_IN_MENU_BLOCKS_COMPONENT_MAP, SLIDE_IN_MENU_BLOCK_COMPONENT_NAME } from '../../../assets/menu/slideInMenuData';
 
 const portalDivElement = document.createElement('div');
 portalDivElement.id = 'portal-root';

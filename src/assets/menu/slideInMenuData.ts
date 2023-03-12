@@ -1,13 +1,14 @@
-import { MainMenuBlock } from '../core/components/Menus/MainMenuBlock';
-import { ProfileMenuBlock } from '../user/components/ProfileMenuBlock';
-import { ProtectedRoutesEnum } from './routes/routes';
+import { ProtectedRoutesEnum } from '../../config/routes/routes';
+import { MainMenuBlock } from '../../core/components/Menus/MainMenuBlock';
+import { ProfileMenuBlock } from '../../user/components/ProfileMenuBlock';
 
-export type MenuBlockType = {
+export interface IMenuItemListItem {
   id: string;
   url: string;
-};
+}
 
-export const MAIN_MENU_BLOCK: MenuBlockType[] = [
+//TODO Refactor Logout mechanics.
+export const MAIN_MENU_BLOCK: IMenuItemListItem[] = [
   {
     id: 'business',
     url: ProtectedRoutesEnum.business,
@@ -18,7 +19,7 @@ export const MAIN_MENU_BLOCK: MenuBlockType[] = [
   },
 ];
 
-export const PROFILE_MENU_BLOCK: MenuBlockType[] = [
+export const PROFILE_MENU_BLOCK: IMenuItemListItem[] = [
   {
     id: 'position',
     url: ProtectedRoutesEnum.position,
@@ -26,6 +27,10 @@ export const PROFILE_MENU_BLOCK: MenuBlockType[] = [
   {
     id: 'contacts',
     url: ProtectedRoutesEnum.contacts,
+  },
+  {
+    id: 'logout',
+    url: '',
   },
 ];
 

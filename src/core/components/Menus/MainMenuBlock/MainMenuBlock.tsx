@@ -1,4 +1,4 @@
-import { MAIN_MENU_BLOCK, SLIDE_IN_MENU_BLOCK_COMPONENT_NAME } from '../../../../config/slideInMenuConfig';
+import { MAIN_MENU_BLOCK, SLIDE_IN_MENU_BLOCK_COMPONENT_NAME } from '../../../../assets/menu/slideInMenuData';
 import { MenuItemList } from '../MenuItemList';
 
 export const MainMenuBlock = (): JSX.Element => {
