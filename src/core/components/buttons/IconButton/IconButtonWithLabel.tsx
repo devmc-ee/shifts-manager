@@ -23,11 +23,9 @@ export const IconButtonWithLabel = ({ icon, label, variant = COLOR_VARIANTS.PRIM
   );
 
   return (
-    <>
-      <IconButton onClick={handleClick} className={iconButtonClasses}>
-        {icon}
-        {label && <span className={labelClasses}>{label}</span>}
-      </IconButton>
-    </>
+    <IconButton onClick={handleClick} className={iconButtonClasses}>
+      {icon}
+      {label && <span className={labelClasses}>{label}</span>}
+    </IconButton>
   );
 };
