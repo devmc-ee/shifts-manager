@@ -14,6 +14,18 @@
       "shifts": "เทอกราฟาฟิก",
       "timesheets": "แผ่นเวลา",
       "team": "บุคลากร"
+    },
+    "slideInBar": {
+      "mainMenu": {
+        "title": "เมนู",
+        "business": "ธุรกิจ",
+        "settings": "การตั้งค่า"
+      },
+      "profileMenu": {
+        "title": "โปรไฟล์บัญชี",
+        "position": "ตำแหน่ง",
+        "contacts": "ติดต่อ"
+      }
     }
   },
   "loginForm": {

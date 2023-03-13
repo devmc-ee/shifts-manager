@@ -14,6 +14,18 @@
       "shifts": "Shifts",
       "timesheets": "Timesheets",
       "team": "Team"
+    },
+    "slideInBar": {
+      "mainMenu": {
+        "title": "Menu",
+        "business": "Business",
+        "settings": "Settings"
+      },
+      "profileMenu": {
+        "title": "Profile",
+        "position": "Position",
+        "contacts": "Contacts"
+      }
     }
   },
   "loginForm": {

@@ -1,8 +1,8 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { NavMenu } from './NavMenu';
-import icons from '../../../assets/icons/NavIconSet';
-import { useAppDispatch, useAppSelector } from '../../../config/redux/hooks';
-import { changeActiveRoute } from '../../redux/coreSlice';
+import icons from '../../../../assets/icons/NavIconSet';
+import { useAppDispatch, useAppSelector } from '../../../../config/redux/hooks';
+import { changeActiveRoute } from '../../../redux/coreSlice';
 
 export default {
   title: 'NavMenu',

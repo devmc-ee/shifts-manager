@@ -1,37 +1,28 @@
 import BurgerMenuIcon from '../../../assets/icons/burger-menu-icon.svg';
-
 import ProfileIcon from '../../../assets/icons/profile-icon.svg';
 import { useAppDispatch } from '../../../config/redux/hooks';
-import { callHeaderBlockButtonClicked } from '../../redux/coreSlice';
 import { COLOR_VARIANTS } from '../../types/ColorVariants';
 import { IconButtonWithLabel } from '../buttons/IconButton';
+import { openSlideInBar } from '../../redux/coreSlice';
+import { SLIDE_FROM_SIDE, SLIDE_IN_MENU_BLOCK_COMPONENT_NAME } from '../../../assets/menu/slideInMenuData';
 
 interface HeaderBarProps {
   title: string;
 }
 
-export const enum HEADER_BUTTON_ID {
-  burgerMenuButton = 'burger-menu-button',
-  profileMenuButton = 'profile-menu-button',
-}
-
 export const HeaderBar = ({ title }: HeaderBarProps) => {
   const dispatch = useAppDispatch();
-
-  const handleButtonClick = (buttonID: HEADER_BUTTON_ID) => () => {
-    dispatch(callHeaderBlockButtonClicked(buttonID));
-  };
 
   return (
     <div className="header-bar">
       <IconButtonWithLabel
-        handleClick={handleButtonClick(HEADER_BUTTON_ID.burgerMenuButton)}
+        handleClick={() => dispatch(openSlideInBar({ from: SLIDE_FROM_SIDE.LEFT, componentName: SLIDE_IN_MENU_BLOCK_COMPONENT_NAME.LEFT_MENU }))}
         variant={COLOR_VARIANTS.PRIMARY_CONTRAST}
         icon={<BurgerMenuIcon />}
       />
       <div className="header-title">{title}</div>
       <IconButtonWithLabel
-        handleClick={handleButtonClick(HEADER_BUTTON_ID.profileMenuButton)}
+        handleClick={() => dispatch(openSlideInBar({ from: SLIDE_FROM_SIDE.RIGHT, componentName: SLIDE_IN_MENU_BLOCK_COMPONENT_NAME.RIGHT_MENU }))}
         variant={COLOR_VARIANTS.PRIMARY_CONTRAST}
         icon={<ProfileIcon />}
       />

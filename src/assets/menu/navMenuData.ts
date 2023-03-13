@@ -1,12 +1,12 @@
-import { ProtectedRoutesEnum } from './routes/routes';
+import { ProtectedRoutesEnum } from '../../config/routes/routes';
 
-export type NavMenuItemType = {
+export interface INavMenuItem {
   id: string;
   icon: string;
   url: string;
-};
+}
 
-export const NAV_MENU: NavMenuItemType[] = [
+export const NAV_MENU: INavMenuItem[] = [
   {
     id: 'home',
     icon: 'HomeIcon',

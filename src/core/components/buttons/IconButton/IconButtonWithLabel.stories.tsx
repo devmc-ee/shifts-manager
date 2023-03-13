@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { BurgerMenuIcon } from '../../../../assets/icons';
+import BurgerMenuIcon from '../../../../assets/icons/burger-menu-icon.svg';
 import { COLOR_VARIANTS } from '../../../types/ColorVariants';
 import { IconButtonWithLabel } from './IconButtonWithLabel';
 import ProfileIcon from '../../../../assets/icons/profile-icon.svg';

@@ -1,0 +1,1 @@
+export { SlideInProvider } from './SlideInProvider';

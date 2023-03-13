@@ -1,0 +1,145 @@
+.slide-in {
+  &-menu {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+
+    &-overlay {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 500;
+      animation: fade-out 200ms cubic-bezier(0, 0, 0.2, 1) forwards;
+
+      &--visible {
+        background-color: rgba(0, 0, 0, 0.5);
+        animation: fade-in 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
+      }
+    }
+  }
+
+  &-bar {
+    position: fixed;
+    height: 100vh;
+    background-color: white;
+    top: 0;
+    box-shadow: rgb(0 0 0 / 20%) 0 0.5rem 0.6rem -0.3rem, rgb(0 0 0 / 14%) 0 1rem 1.5rem 0.13rem, rgb(0 0 0 / 12%) 0 0.4rem 1.9rem 0.3rem;
+    overflow: hidden;
+  }
+
+  &--hidden {
+    &-left {
+      left: -100%;
+    }
+
+    &-right {
+      right: -100%;
+    }
+  }
+
+  &--close {
+    &-left {
+      left: 0;
+      animation: close-left 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
+    }
+
+    &-right {
+      right: 0;
+      animation: close-right 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
+    }
+  }
+
+  &--open {
+    &-left {
+      transform: translateX(-100%);
+      animation: open-left 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
+    }
+
+    &-right {
+      right: 0;
+      transform: translateX(100%);
+      animation: open-right 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
+    }
+  }
+
+  &-nav-header {
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    width: inherit;
+    height: 3.75rem;
+    font-size: 1.5rem;
+    color: var(--primary-color-contrast-text);
+    top: 0;
+  }
+
+  &-title {
+    padding: 0 1rem;
+  }
+}
+
+@keyframes open-right {
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes close-right {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes open-left {
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes close-left {
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  100% {
+    opacity: 1;
+  }
+
+  0% {
+    opacity: 0;
+  }
+}
+
+$slide-in-bar-width: (
+  bp-320: 15rem,
+  bp-360: 17rem,
+  bp-480: 24rem,
+  bp-768: 26rem,
+  bp-1024: 22rem,
+  bp-1200: 20rem,
+  bp-1400: 18rem,
+);
+
+@each $breakpoint, $width in $breakpoints {
+  @media (min-width: $width) {
+    .slide-in-bar {
+      width: map-get($slide-in-bar-width, $breakpoint);
+    }
+  }
+}

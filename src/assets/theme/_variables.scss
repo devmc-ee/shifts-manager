@@ -21,3 +21,13 @@ $primaryColor: var(--primary-color);
 $primaryColorContrast: var(--primary-color-contrast);
 $secondaryColor: var(--secondary-color);
 $secondaryColorContrast: var(--secondary-color-contrast);
+
+$breakpoints: (
+  bp-320: 320px,
+  bp-360: 360px,
+  bp-480: 480px,
+  bp-768: 768px,
+  bp-1024: 1024px,
+  bp-1200: 1200px,
+  bp-1400: 1400px,
+);
