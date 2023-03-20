@@ -1,8 +1,11 @@
+import { useNavigate } from 'react-router-dom';
 import ProfileIconLarge from '../../../assets/icons/profile-icon-large.svg';
 import { PROFILE_MENU_BLOCK, SLIDE_IN_MENU_BLOCK_COMPONENT_NAME } from '../../../assets/menu/slideInMenuData';
-import { useAppSelector } from '../../../config/redux/hooks';
+import { useAppDispatch, useAppSelector } from '../../../config/redux/hooks';
 import { AppState } from '../../../config/redux/store';
+import { PublicRoutesEnum } from '../../../config/routes/routes';
 import { MenuItemList } from '../../../core/components/Menus/MenuItemList';
+import { clearUserData } from '../../redux/userSlice';
 
 export const ProfileMenuBlock = (): JSX.Element => {
   const { userName, userEmail } = useAppSelector(({ user }: AppState) => ({
@@ -10,8 +13,13 @@ export const ProfileMenuBlock = (): JSX.Element => {
     userEmail: user.userName,
   }));
 
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+
   const handleLogOut = (): void => {
-    console.log('1');
+    localStorage.clear();
+    dispatch(clearUserData);
+    navigate(PublicRoutesEnum.login);
   };
 
   return (
