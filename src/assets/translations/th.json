@@ -23,7 +23,8 @@
       },
       "profileMenu": {
         "title": "โปรไฟล์",
-        "contacts": "ติดต่อ"
+        "contacts": "ติดต่อ",
+        "logout": "ออกจากระบบ"
       }
     }
   },

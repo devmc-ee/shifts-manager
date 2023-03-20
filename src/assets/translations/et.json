@@ -23,7 +23,8 @@
       },
       "profileMenu": {
         "title": "Profiil",
-        "contacts": "Kontaktid"
+        "contacts": "Kontaktid",
+        "logout": "Logi välja"
       }
     }
   },

@@ -23,7 +23,8 @@
       },
       "profileMenu": {
         "title": "Profile",
-        "contacts": "Contacts"
+        "contacts": "Contacts",
+        "logout": "Log out"
       }
     }
   },
