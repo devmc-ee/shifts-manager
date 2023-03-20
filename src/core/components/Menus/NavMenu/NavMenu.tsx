@@ -26,9 +26,9 @@ export const NavMenu = ({ activeRoute, icons, onClick }: NavMenuProps): JSX.Elem
 
   return (
     <nav className="nav-menu">
-      <div className="nav-menu-buttons-container">
+      <div className="nav-menu__buttons-container">
         {NAV_MENU.map((item: INavMenuItem) => (
-          <div className="nav-menu-button" key={item.id}>
+          <div className="nav-menu__button" key={item.id}>
             <Link to={item.url}>
               <IconButtonWithLabel
                 handleClick={handleClick(item.url)}

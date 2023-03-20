@@ -3,6 +3,7 @@ import { ChangeEvent, useEffect, useState } from 'react';
 import { LoginForm } from './LoginForm';
 import { changeLoginFormFieldValue } from '../../redux/loginSlice';
 import { useAppDispatch, useAppSelector } from '../../../config/redux/hooks';
+import { AppState } from '../../../config/redux/store';
 
 export default {
   title: 'LoginForm/LoginForm',
@@ -11,8 +12,8 @@ export default {
 
 const Template: ComponentStory<typeof LoginForm> = (args, global) => {
   const dispatch = useAppDispatch();
-  const userName = useAppSelector(({ login }) => login.userName);
-  const password = useAppSelector(({ login }) => login.password);
+  const userName = useAppSelector(({ login }: AppState) => login.userName);
+  const password = useAppSelector(({ login }: AppState) => login.password);
   const [isLoading, setIsLoading] = useState(false);
 
   const [isSubmitDisabled, setIsSubmitDisabled] = useState(!!args?.isSubmitDisabled);

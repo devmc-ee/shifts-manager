@@ -2,16 +2,18 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import MenuProps from '@mui/material/Menu/Menu';
-import PublicIcon from '@mui/icons-material/Public';
 import { languages } from '../../../config/i18n';
 import { useTranslation } from 'react-i18next';
+import classnames from 'classnames';
 
 interface LanguageSwitcherProps {
   language: string;
   onChange: (event: SelectChangeEvent<string>) => void;
+  isStandardSize: boolean;
+  icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
 }
 
-export const LanguageSwitcher = ({ onChange, language }: LanguageSwitcherProps) => {
+export const LanguageSwitcher = ({ onChange, language, icon, isStandardSize = true }: LanguageSwitcherProps) => {
   const { t } = useTranslation();
 
   const menuProps: Partial<typeof MenuProps> = {
@@ -20,20 +22,26 @@ export const LanguageSwitcher = ({ onChange, language }: LanguageSwitcherProps) 
   };
   const value = !language ? languages[0] : language;
 
+  const languageSwitcherClasses = classnames(
+    'language-switcher-select',
+    { ['language-switcher-select--standard']: isStandardSize },
+    { ['language-switcher-select--small']: !isStandardSize }
+  );
+
   return (
     <FormControl className="language-switcher-container" variant="standard" sx={{ maxWidth: 100 }}>
       <Select
         MenuProps={menuProps}
-        className="language-switcher-select-standard"
+        className={languageSwitcherClasses}
         value={value}
         label={value}
         onChange={onChange}
         disableUnderline={true}
-        IconComponent={PublicIcon}
+        IconComponent={icon}
       >
         {languages.map((code: string) => (
           <MenuItem key={code} value={code} style={value === code ? { display: 'none' } : {}} divider={true}>
-            {t(`core.languages.${code}`)}
+            {isStandardSize ? t(`core.languages.${code}`) : code.toUpperCase()}
           </MenuItem>
         ))}
       </Select>

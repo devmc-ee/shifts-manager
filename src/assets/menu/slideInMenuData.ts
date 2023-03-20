@@ -20,10 +20,6 @@ export const MAIN_MENU_BLOCK: IMenuItemListItem[] = [
 
 export const PROFILE_MENU_BLOCK: IMenuItemListItem[] = [
   {
-    id: 'position',
-    url: ProtectedRoutesEnum.position,
-  },
-  {
     id: 'contacts',
     url: ProtectedRoutesEnum.contacts,
   },

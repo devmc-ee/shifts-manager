@@ -25,7 +25,7 @@ export const coreSlice = createSlice({
     SLIDE_IN_BAR_OPENED: (state, { payload: { from, componentName } }) => {
       state.slideInBar = { from, componentName };
     },
-    SLIDE_IN_BARS_CLOSED: (state) => {
+    SLIDE_IN_BAR_CLOSED: (state) => {
       state.slideInBar = null;
     },
   },
@@ -36,7 +36,7 @@ export const {
   NOTIFICATIONS_CLEARED: clearNotifications,
   ACTIVE_ROUTE_CHANGED: changeActiveRoute,
   SLIDE_IN_BAR_OPENED: openSlideInBar,
-  SLIDE_IN_BARS_CLOSED: closeSlideInBars,
+  SLIDE_IN_BAR_CLOSED: closeSlideInBar,
 } = coreSlice.actions;
 
 export const coreReducer = coreSlice.reducer;

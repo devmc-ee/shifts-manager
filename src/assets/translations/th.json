@@ -22,8 +22,7 @@
         "settings": "การตั้งค่า"
       },
       "profileMenu": {
-        "title": "โปรไฟล์บัญชี",
-        "position": "ตำแหน่ง",
+        "title": "โปรไฟล์",
         "contacts": "ติดต่อ"
       }
     }

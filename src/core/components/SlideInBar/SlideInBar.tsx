@@ -1,3 +1,4 @@
+import { SlideInBarMenuHeader } from '../SlideInBarMenuHeader/SlideInBarMenuHeader';
 import classnames from 'classnames';
 import { useState, useEffect } from 'react';
 
@@ -17,7 +18,7 @@ export const SlideInBar = ({ children, open, title, handleClose, from }: SlideIn
     if (!touched && open) {
       setTouched(true);
     }
-  }, [open]);
+  }, [open, touched]);
 
   useEffect(() => {
     if (from) {
@@ -32,17 +33,15 @@ export const SlideInBar = ({ children, open, title, handleClose, from }: SlideIn
     { [`slide-in--hidden-${direction}`]: !open }
   );
 
-  const overlayClasses = classnames('slide-in-menu-overlay', { [`slide-in-menu-overlay--${'visible'}`]: open });
+  const overlayClasses = classnames('slide-in-menu__overlay', { [`slide-in-menu__overlay--${'visible'}`]: open });
 
   return (
     <div className="root slide-in-menu">
       <div role="button" tabIndex={-1} onClick={handleClose} onKeyDown={handleClose} className={overlayClasses} />
       <div className="slide-in-menu">
         <div className={slideInBarClasses}>
-          <div className="slide-in-nav-header">
-            <span className="slide-in-title">{title}</span>
-          </div>
-          <div className="slide-in-menu-item-list-block">{children}</div>
+          <SlideInBarMenuHeader title={title} from={from} />
+          <div className="slide-in-menu__item-list-block">{children}</div>
         </div>
       </div>
     </div>

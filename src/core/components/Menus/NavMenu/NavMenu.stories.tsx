@@ -3,6 +3,7 @@ import { NavMenu } from './NavMenu';
 import icons from '../../../../assets/icons/NavIconSet';
 import { useAppDispatch, useAppSelector } from '../../../../config/redux/hooks';
 import { changeActiveRoute } from '../../../redux/coreSlice';
+import { AppState } from '../../../../config/redux/store';
 
 export default {
   title: 'NavMenu',
@@ -14,7 +15,7 @@ export default {
 
 const Template: ComponentStory<typeof NavMenu> = (args) => {
   const dispatch = useAppDispatch();
-  const activeRoute = useAppSelector(({ core }) => core.activeRoute);
+  const activeRoute = useAppSelector(({ core }: AppState) => core.activeRoute);
 
   const handleActiveRoute = (url: string) => {
     dispatch(changeActiveRoute(url));

@@ -23,7 +23,6 @@
       },
       "profileMenu": {
         "title": "Profile",
-        "position": "Position",
         "contacts": "Contacts"
       }
     }

@@ -2,20 +2,68 @@
   height: 2rem;
 }
 
-.MuiSvgIcon-root.MuiSelect-icon {
-  transform: none;
+.MuiSelect-iconStandard.MuiSelect-icon {
+  top: 10%;
 }
 
-.language-switcher-select-standard.MuiInputBase-root.MuiInput-root {
+.MuiSelect-select.MuiInputBase-input.MuiInput-input {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: transparent;
+  text-align: right;
+  min-width: 6.88rem;
+  padding-right: 2rem;
+  font-weight: 500;
+}
+
+.language-switcher-select--standard {
+  svg {
+    transform: none;
+    display: block;
+  }
+
+  .MuiSelect-icon {
+    color: $secondaryColorContrast;
+  }
+  > div {
+    color: $primaryColor;
+
+    &:hover {
+      color: $primaryColor;
+    }
+  }
+}
+
+.language-switcher-select--small {
+  svg {
+    transform: rotate(180);
+  }
+
+  .MuiSelect-icon {
+    color: $primaryColorContrast;
+  }
+
+  > div {
+    color: $primaryColorContrast;
+
+    &:hover {
+      color: $primaryColorContrast;
+    }
+  }
+}
+
+.language-switcher-select.MuiInputBase-root.MuiInput-root {
   display: flex;
   height: 2rem;
-  justify-content: flex-end;
-  padding-right: 0;
+  padding: 0 0.5rem;
+  justify-content: center;
 }
 
-.MuiSelect-select.MuiInputBase-input.MuiInput-input.Mui-hover {
-  color: var(--primary-color-dark);
-  font-weight: 500;
+.language-switcher-select,
+.MuiSelect-select.MuiInputBase-input.MuiInput-input {
+  min-width: 6.88rem;
+  height: 2rem;
 }
 
 .MuiList-root.MuiMenu-list {
@@ -26,32 +74,16 @@
   justify-content: flex-end;
 }
 
-.language-switcher-select-standard,
-.MuiSelect-select.MuiInputBase-input.MuiInput-input {
-  background-color: transparent;
-  text-align: right;
-  min-width: 6.88rem;
-}
-
-.MuiSelect-select.MuiInputBase-input.MuiInput-input.MuiSelect-select.MuiInputBase-input.MuiInput-input.MuiSelect-select.MuiInputBase-input.MuiInput-input {
-  padding-right: 2rem;
-}
-
-.login-form__field-container {
-  padding-bottom: 2rem;
-  width: 100%;
-}
-
-.MuiFormLabel-root.MuiInputLabel,
-.MuiInputLabel-root {
-  text-align: center;
-}
-
 .MuiList-root {
   margin: 0;
   padding: 0;
   list-style: none;
   justify-content: center;
+}
+
+.MuiFormLabel-root.MuiInputLabel,
+.MuiInputLabel-root {
+  text-align: center;
 }
 
 .language-switcher-container.MuiFormControl-root {

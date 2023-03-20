@@ -17,9 +17,9 @@ export const IconButtonWithLabel = ({ icon, label, variant = COLOR_VARIANTS.PRIM
   const iconButtonClasses = classnames('icon-button', { [`icon-button--${variant}`]: !!variant }, ...getPostfixedClassNamesArray(customClasses, 'icon-button'));
 
   const labelClasses = classnames(
-    'icon-button-label',
-    { [`icon-button-label--${variant}`]: !!variant },
-    ...getPostfixedClassNamesArray(customClasses, 'icon-button-label')
+    'icon-button__label',
+    { [`icon-button__label--${variant}`]: !!variant },
+    ...getPostfixedClassNamesArray(customClasses, 'icon-button__label')
   );
 
   return (
