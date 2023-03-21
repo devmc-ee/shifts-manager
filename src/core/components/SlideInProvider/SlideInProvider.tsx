@@ -30,6 +30,7 @@ export const SlideInProvider = (): JSX.Element => {
 
   useLayoutEffect(() => {
     if (slideInBarArgs) document.body.appendChild(portalDivElement);
+    if (!slideInBarArgs) handleClose();
   }, [slideInBarArgs]);
 
   useEffect(() => {
@@ -47,7 +48,7 @@ export const SlideInProvider = (): JSX.Element => {
   }, [slideInBarArgs, t]);
 
   return createPortal(
-    <SlideInBar handleClose={handleClose} title={menuTitle} open={!!slideInBarArgs} from={slideInBarArgs?.from}>
+    <SlideInBar handleClose={handleClose} title={menuTitle} open={!!slideInBarArgs} from={slideInBarArgs?.from} componentName={slideInBarArgs?.componentName}>
       {Component}
     </SlideInBar>,
     portalDivElement

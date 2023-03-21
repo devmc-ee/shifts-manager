@@ -5,11 +5,12 @@ import { useAppDispatch, useAppSelector } from '../../../config/redux/hooks';
 import { AppState } from '../../../config/redux/store';
 import { MenuItemList } from '../../../core/components/Menus/MenuItemList';
 import { closeSlideInBar } from '../../../core/redux/coreSlice';
-import { clearUserData } from '../../redux/userSlice';
+import { useLogoutMutation } from '../../api/auth/login';
 
 export const ProfileMenuBlock = (): JSX.Element => {
   const dispatch = useAppDispatch();
   const { t } = useTranslation();
+  const [logout] = useLogoutMutation();
 
   const { userName, userEmail } = useAppSelector(({ user }: AppState) => ({
     userName: user.userFullName,
@@ -17,9 +18,8 @@ export const ProfileMenuBlock = (): JSX.Element => {
   }));
 
   const handleLogOut = () => {
-    localStorage.clear();
     dispatch(closeSlideInBar());
-    setTimeout(() => dispatch(clearUserData()), 230);
+    logout('api');
   };
 
   return (

@@ -1,18 +1,19 @@
 import { SlideInBarMenuHeader } from '../SlideInBarMenuHeader/SlideInBarMenuHeader';
 import classnames from 'classnames';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useLayoutEffect } from 'react';
 
 interface SlideInBarProps {
   children: JSX.Element;
   from?: string;
   open: boolean;
   title: string;
+  componentName: string;
   handleClose: () => void;
 }
 
-export const SlideInBar = ({ children, open, title, handleClose, from }: SlideInBarProps) => {
+export const SlideInBar = ({ children, open, title, handleClose, from, componentName }: SlideInBarProps) => {
   const [touched, setTouched] = useState(false);
-  const [direction, setDirection] = useState(from);
+  const [direction, setDirection] = useState('');
 
   useEffect(() => {
     if (!touched && open) {
@@ -20,7 +21,7 @@ export const SlideInBar = ({ children, open, title, handleClose, from }: SlideIn
     }
   }, [open, touched]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (from) {
       setDirection(from);
     }
@@ -40,7 +41,7 @@ export const SlideInBar = ({ children, open, title, handleClose, from }: SlideIn
       <div role="button" tabIndex={-1} onClick={handleClose} onKeyDown={handleClose} className={overlayClasses} />
       <div className="slide-in-menu">
         <div className={slideInBarClasses}>
-          <SlideInBarMenuHeader title={title} from={from} />
+          <SlideInBarMenuHeader title={title} componentName={componentName} />
           <div className="slide-in-menu__item-list-block">{children}</div>
         </div>
       </div>

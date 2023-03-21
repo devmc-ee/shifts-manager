@@ -1,8 +1,5 @@
-import { useLayoutEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ArrowBack from '../../../assets/icons/arrow-back.svg';
-import { useAppSelector } from '../../../config/redux/hooks';
-import { AppState } from '../../../config/redux/store';
 import { COLOR_VARIANTS } from '../../types/ColorVariants';
 import { IconButtonWithLabel } from '../buttons/IconButton';
 
@@ -12,14 +9,6 @@ export interface SubMenuPageContainerProps {
 }
 
 export const SubMenuPageContainer = ({ title, children }: SubMenuPageContainerProps): JSX.Element => {
-  const slideInBarArgs = useAppSelector(({ core }: AppState) => core.slideInBar);
-
-  useLayoutEffect(() => {
-    if (!slideInBarArgs) {
-      navigate(-1);
-    }
-  }, []);
-
   const navigate = useNavigate();
 
   const handleGoBack = () => {
