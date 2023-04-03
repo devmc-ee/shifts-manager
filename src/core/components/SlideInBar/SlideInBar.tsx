@@ -1,6 +1,7 @@
 import { SlideInBarMenuHeader } from '../SlideInBarMenuHeader/SlideInBarMenuHeader';
 import classnames from 'classnames';
 import { useState, useEffect, useLayoutEffect } from 'react';
+import { SLIDE_IN_MENU_BLOCK_COMPONENT_NAME } from '../../../assets/menu/slideInMenuData';
 
 interface SlideInBarProps {
   children: JSX.Element;
@@ -41,7 +42,7 @@ export const SlideInBar = ({ children, open, title, handleClose, from, component
       <div role="button" tabIndex={-1} onClick={handleClose} onKeyDown={handleClose} className={overlayClasses} />
       <div className="slide-in-menu">
         <div className={slideInBarClasses}>
-          <SlideInBarMenuHeader title={title} componentName={componentName} />
+          <SlideInBarMenuHeader title={title} hasLanguageSwitcher={SLIDE_IN_MENU_BLOCK_COMPONENT_NAME.RIGHT_MENU === componentName} />
           <div className="slide-in-menu__item-list-block">{children}</div>
         </div>
       </div>

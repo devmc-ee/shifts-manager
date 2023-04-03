@@ -9,20 +9,21 @@ export default {
   component: SlideInBarMenuHeader,
 } as ComponentMeta<typeof SlideInBarMenuHeader>;
 
-const Template: ComponentStory<typeof SlideInBarMenuHeader> = ({ componentName }: SlideInBarMenuHeaderProps) => {
+const Template: ComponentStory<typeof SlideInBarMenuHeader> = ({ hasLanguageSwitcher }: SlideInBarMenuHeaderProps) => {
   const { t } = useTranslation();
   const [headerTitle, setHeaderTitle] = useState('');
+  const componentName = hasLanguageSwitcher ? SLIDE_IN_MENU_BLOCK_COMPONENT_NAME.RIGHT_MENU : SLIDE_IN_MENU_BLOCK_COMPONENT_NAME.LEFT_MENU;
 
   useEffect(() => {
     const newTitle = t(`core.slideInBar.${componentName}.title`);
     setHeaderTitle(newTitle);
   }, [componentName, t]);
 
-  return <SlideInBarMenuHeader componentName={componentName} title={headerTitle} />;
+  return <SlideInBarMenuHeader hasLanguageSwitcher={hasLanguageSwitcher} title={headerTitle} />;
 };
 
 export const MainMenuHeader = Template.bind({});
-MainMenuHeader.args = { componentName: SLIDE_IN_MENU_BLOCK_COMPONENT_NAME.LEFT_MENU };
+MainMenuHeader.args = { hasLanguageSwitcher: false };
 
 export const ProfileMenuHeader = Template.bind({});
-ProfileMenuHeader.args = { componentName: SLIDE_IN_MENU_BLOCK_COMPONENT_NAME.RIGHT_MENU };
+ProfileMenuHeader.args = { hasLanguageSwitcher: true };
