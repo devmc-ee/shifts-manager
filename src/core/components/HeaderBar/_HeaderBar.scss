@@ -4,14 +4,14 @@
     min-height: 3.75rem;
     justify-content: space-around;
     align-items: center;
-    background-color: var(--primary-color);
+    background-color: $primaryColor;
     padding-left: 1rem;
     padding-right: 1rem;
   }
 
   &-title {
     display: flex;
-    color: var(--secondary-color);
+    color: $secondaryColor;
     font-weight: 700;
     justify-content: center;
     width: 100%;

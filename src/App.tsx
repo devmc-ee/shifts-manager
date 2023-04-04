@@ -8,6 +8,8 @@ import { RootNavLayout } from './core/components/ProtectedPageLayout';
 import { ShiftsPage, NewShiftPage } from './shift/components';
 import { useUrlObserver } from '../src/core/hooks/useUrlObserver';
 import { TimeSheetsPage } from './timeSheet/TimeSheetsPage';
+import { Contacts } from './pages/Contacts';
+import { SubMenuPageContainer } from './core/components/SubMenuPageContainer/SubMenuPageContainer';
 
 export const App = () => {
   useUrlObserver();
@@ -73,6 +75,17 @@ export const App = () => {
             }
           />
         </Route>
+
+        <Route
+          path={ProtectedRoutesEnum.contacts}
+          element={
+            <ProtectedRoute>
+              <SubMenuPageContainer title={'Contacts'}>
+                <Contacts />
+              </SubMenuPageContainer>
+            </ProtectedRoute>
+          }
+        />
 
         <Route
           path="*"

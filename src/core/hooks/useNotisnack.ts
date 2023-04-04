@@ -1,11 +1,12 @@
 import { useSnackbar } from 'notistack';
 import { useEffect } from 'react';
 import { useAppSelector } from '../../config/redux/hooks';
+import { AppState } from '../../config/redux/store';
 
 export const useNotisnack = () => {
   const { enqueueSnackbar } = useSnackbar();
 
-  const notifications = useAppSelector(({ core }) => core.notifications);
+  const notifications = useAppSelector(({ core }: AppState) => core.notifications);
 
   useEffect(() => {
     if (notifications.length) {

@@ -1,0 +1,17 @@
+.slide-in-bar-menu {
+  &__nav-header {
+    background-color: $primaryColor;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: inherit;
+    height: 3.75rem;
+    font-size: 1.5rem;
+    color: $primaryColorContrast;
+    top: 0;
+  }
+
+  &__title {
+    padding: 0 1rem;
+  }
+}

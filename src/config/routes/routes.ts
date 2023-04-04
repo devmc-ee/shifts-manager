@@ -8,7 +8,6 @@ export enum ProtectedRoutesEnum {
   timeSheets = '/time-sheets',
   business = '/business',
   settings = '/settings',
-  position = '/position',
   contacts = '/contacts',
 }
 

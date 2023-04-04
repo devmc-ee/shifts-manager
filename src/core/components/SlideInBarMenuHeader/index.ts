@@ -1,0 +1,1 @@
+export { SlideInBarMenuHeader } from './SlideInBarMenuHeader';

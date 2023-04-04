@@ -6,6 +6,7 @@ import { AppState } from '../../config/redux/store';
 import { PageContent } from '../../core/components/PageContent';
 import { ProtectedRoutesEnum } from '../../config/routes/routes';
 import { LoginForm } from '../../user/components/LoginForm';
+import GlobeIcon from '../../assets/icons/globe-icon.svg';
 import { LanguageSwitcher } from '../../core/components/LanguageSwitcher';
 
 export const Login = () => {
@@ -25,7 +26,7 @@ export const Login = () => {
     <PageContent classes="login">
       <div className="login-page__app-title">{title}</div>
       <div className="login-page__form-container">
-        <LanguageSwitcher />
+        <LanguageSwitcher icon={GlobeIcon} isStandardSize={true} />
         <LoginForm />
       </div>
     </PageContent>

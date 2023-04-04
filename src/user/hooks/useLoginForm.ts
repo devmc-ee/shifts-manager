@@ -3,12 +3,13 @@ import { changeLoginFormFieldValue } from '../redux/loginSlice';
 import { useAppDispatch, useAppSelector } from '../../config/redux/hooks';
 import { LoginFormProps } from '../components/LoginForm/LoginForm';
 import { useLoginMutation } from '../api/auth/login';
+import { AppState } from '../../config/redux/store';
 
 export const useLoginForm = () => {
   const dispatch = useAppDispatch();
 
-  const userName = useAppSelector(({ login }) => login.userName);
-  const password = useAppSelector(({ login }) => login.password);
+  const userName = useAppSelector(({ login }: AppState) => login.userName);
+  const password = useAppSelector(({ login }: AppState) => login.password);
 
   const [login, { isLoading, error, reset, status }] = useLoginMutation();
 

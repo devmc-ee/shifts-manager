@@ -22,9 +22,9 @@
         "settings": "การตั้งค่า"
       },
       "profileMenu": {
-        "title": "โปรไฟล์บัญชี",
-        "position": "ตำแหน่ง",
-        "contacts": "ติดต่อ"
+        "title": "โปรไฟล์",
+        "contacts": "ติดต่อ",
+        "logout": "ออกจากระบบ"
       }
     }
   },

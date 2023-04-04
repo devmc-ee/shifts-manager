@@ -4,7 +4,7 @@
     top: 0;
     z-index: 1000;
 
-    &-overlay {
+    &__overlay {
       position: fixed;
       width: 100vw;
       height: 100vh;
@@ -64,17 +64,6 @@
       transform: translateX(100%);
       animation: open-right 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
     }
-  }
-
-  &-nav-header {
-    background-color: var(--primary-color);
-    display: flex;
-    align-items: center;
-    width: inherit;
-    height: 3.75rem;
-    font-size: 1.5rem;
-    color: var(--primary-color-contrast-text);
-    top: 0;
   }
 
   &-title {

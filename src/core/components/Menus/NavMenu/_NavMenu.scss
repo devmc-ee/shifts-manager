@@ -1,7 +1,7 @@
 .nav-menu {
   width: 100vw;
 
-  &-button {
+  &__button {
     width: 100%;
 
     & svg {
@@ -9,13 +9,13 @@
     }
   }
 
-  &-buttons-container {
+  &__buttons-container {
     display: grid;
     grid-template-columns: repeat(4, 25vw);
     justify-items: center;
     align-items: center;
     min-height: 4.19rem;
-    background-color: var(--primary-color-light);
+    background-color: $primaryColorLight;
 
     & a {
       text-decoration: none;

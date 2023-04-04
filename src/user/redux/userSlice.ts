@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { UserReducerState } from './UserReducerState.d';
 
 const initialState: UserReducerState = {
+  userFullName: 'John Smith',
   userName: '',
   isLoggedIn: false,
   token: null,
